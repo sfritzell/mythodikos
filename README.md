@@ -29,7 +29,7 @@ Work over the Summer of 2021 will continue to refine the current text-mining too
 - develop Python code for text-mining Ancient Greek literary corpus
 - apply text mining dataset to LeafletJS map
 - develop and expand on proof of concept
-- create and maintain project website
+- create and maintain project website and open source data
 
 ### Radcliffe Edmonds, Consultant
 - consult on use of primary source texts and digital collections

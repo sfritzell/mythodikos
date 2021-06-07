@@ -24,7 +24,7 @@ During the 2019-21 academic years work was done to develop a text-mining tool us
 Work over the Summer of 2021 will continue to refine the current text-mining tool for more accurate use with the Greek literary corpus, expand upon the initial dataset, integrate the geo-data ancient geographical data provided by Pleiades with the project dataset, and develop a preliminary LeafletJS map that will draw upon this information. 
 
 ## Team Members
-### Stella Fritzell, Project Lead
+### [Stella Fritzell](mailto:sfritzell@brynmawr.edu), Project Lead
 - identify text corpus source material
 - develop Python code for text-mining Ancient Greek literary corpus
 - apply text mining dataset to LeafletJS map

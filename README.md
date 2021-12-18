@@ -2,7 +2,7 @@
 Digitally Mapping Mythical People and Places
 
 ## Project Objective
-- Drawing upon a substantial dataset representing ancient literary and material resources, develop and publish an interactive map to aid scholars in answering questions specifically of “Where does a particular figure of myth appear”, and subsequently, “Who from myth is associated with this particular place”.
+- Drawing upon a substantial dataset representing ancient literary (and eventually material resources), develop and publish an interactive map to aid scholars in addressing questions of “Where does a particular figure of myth appear”, and subsequently, “Who from myth is associated with this particular place”.
 
 ## Project Deliverable
 - Interactive LeafletJS map with citations to primary source texts.
@@ -21,7 +21,7 @@ Projects that have begun to combine the visual advantages and utility of digital
 
 During the 2019-21 academic years work was done to develop a text-mining tool using Python and Natural Language Processing methods that can be used to search the Perseus Digital Library Greek corpus for person-place connections and to record these search results as a preliminary dataset. 
 
-Work over the Summer of 2021 will continue to refine the current text-mining tool for more accurate use with the Greek literary corpus, expand upon the initial dataset, integrate the geo-data ancient geographical data provided by Pleiades with the project dataset, and develop a preliminary LeafletJS map that will draw upon this information. 
+Work during the 2021-22 academic year will continue to refine the current text-mining tool for more accurate use with the Greek literary corpus, expand upon the initial dataset, integrate ancient geographical data provided by Pleiades with the project dataset, and develop a preliminary LeafletJS map that will draw upon this information. Steps will also be taken to develop a workflow for eventually integrating the Latin literary corpus, as well as material resources. 
 
 ## Team Members
 [Stella Fritzell](mailto:sfritzell@brynmawr.edu), Project Lead

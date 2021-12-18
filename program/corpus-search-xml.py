@@ -7,12 +7,11 @@ Code for Mythodikos Project:
 2. opens file, parses file, finds pattern matches with regex values & keys in a dictionary
 3. locates secondary pattern matches with regex values within initial search results
 4. for each match: records latinized person name (key), place name, geodata, title & author of text (needs some refinement), citation (with some issues), text context, context length and file name
-5. writes information to .json
+5. writes geoJSON formatted information to .json file
 
 Next Steps:
-1. make result data format / file structure appropriate for Leaflet layers
-2. clean up citation extraction, author and title (prioritize other "Next Steps" first)
-3. write to download/access most recent Perseus corpus and Pleiades file (nice to have, save for later with expanded dataset)
+1. clean up citation extraction, author and title (prioritize other "Next Steps" first)
+2. write to download/access most recent Perseus corpus and Pleiades file (nice to have, save for later with expanded dataset)
 
 @author: sfritzell
 adapted from: search-xml-greek.py
@@ -104,28 +103,29 @@ def make_citation(line, text): #function to get the full citaiton information fo
 	cite_item = text_author + ' , ' + text_title + ' , ' + get_section(line) + '.' + get_linenum(line) + ':' + text
 	return cite_item
 
-def make_jobj(dict1, dict2): #function to merge complex dicts at correct level
+def make_jobj(dict1, dict2): #function to merge complex dicts at correct level and build geoJSON file
+	geoj = {'type': 'FeatureCollection', 'features': []}
 	for key in dict1:
 		if key in dict2: #if the key in both dicts matches
 			dict2[key]['properties']['citations'] = dict1[key] #add the value of said key from dict one at specified level in dict2
-	return dict2
-		
+	for key in dict2:
+		geoj['features'].append(dict2[key]) #append dict of values for each dict2 key to geoJSON features list
+	return geoj
 
 # =====================================================================
 # Program
 # =====================================================================
 
 greekcorpusdir = "/Users/stellafritzell/mythodikos/canonical-greekLit-master" #directory with files for text mining
-outfile = "/Users/stellafritzell/mythodikos/corpus-test-12-13.json" #file to write search data, change file type to .json with .json search
+outfile = "/Users/stellafritzell/mythodikos/corpus-test-12-18.json" #file to write search data, change file type to .json with .json search
 
-#build json file with desired search metadata
+#build geojson file with desired search metadata
 with open(outfile, 'w') as z: #to access/create the outfile for data from text-mining
 
 	citations = defaultdict(list) #create default dict to collect citations for person-place pairs in list class
 	pair_data = {} # new dict for other stuff on ids 
-	# OR, because I can't figure out how to accurately combine these... create seperate dict for each unique key needed for geojson and then combine using default dict
 
-	for root, dirs, files in os.walk(greekcorpusdir):
+	for root, dirs, files in os.walk(greekcorpusdir): #iterate through files/directories in specified
 		for file in files:
 			if fnmatch.fnmatch(file, '*grc*.xml'): #for each file in the directory marked as Greek 
 				infile = root+'/'+str(file) #identify these files to be searched
@@ -133,34 +133,33 @@ with open(outfile, 'w') as z: #to access/create the outfile for data from text-m
 				with open(infile) as x: #open and iterate through each identifed file
 					soup = BeautifulSoup(x, features='lxml')
 
-					for person in persondict:
-						per_terms = persondict[person] # value list for each person key
-						for per in per_terms: # each regex value
-							per_matches = soup.find_all(string=re.compile(per)) #using soup.find_all in place of re.search for navigating xml
-							for per_match in per_matches:
-								context = get_context(per_match)
+					for person in persondict: #iterate through persondict; external file in same directory
+						per_terms = persondict[person] #call value list /alt spellings for each person key
+						for per in per_terms: #iterate through value list / alt spellings
+							per_matches = soup.find_all(string=re.compile(per)) #find matches in text with alt spellings; using soup.find_all in place of re.search for navigating xml
+							for per_match in per_matches: #iterate through matches
+								context = get_context(per_match) #get text surrounding the match
 
-								for place in placedict:
-									pl_keys = placedict[place] # list of keys for each place item
-									pl_terms = pl_keys['spellings'] # values under specificed key
+								for place in placedict: #iterate through placedict; external file in same directory
+									pl_keys = placedict[place] #define list of keys for each place item
+									pl_terms = pl_keys['spellings'] #call values under specificed key
 									pl_id = pl_keys['pleiades id']
 									pl_gps = pl_keys['coordinates']
-									for term in pl_terms: # search regex value
-										pair = re.search(term, context) # searches context for term
-										if pair: #put combined function for citation here instead of all factors, comment out citation list above
-											citation = make_citation(per_match, context)
+									for term in pl_terms: #iterate through alt spellings
+										pair = re.search(term, context) #find matches in context with alt spellings; using re.search because context has been 'pulled' from xml
+										if pair:
+											citation = make_citation(per_match, context) #create citation for found matches
 										else:
 											continue
 
-										ID = person +'-'+ place #unique identifier for match pair
-										citations[ID].append(citation) #in dict creates key for ID (if new) and appends citation as value in list
+										ID = person +'-'+ place #create unique identifier for match pair
+										citations[ID].append(citation) #in citedict creates key for ID (if new) and appends citation as value in list
 										pair_data[ID] = {
 											'type': 'Feature', 
-											'title': place, 
 											'geometry': {'type': 'Point', 'coordinates': pl_gps}, 
-											'properties': {'pleiades id': pl_id, 'citations': []}
-											}
+											'properties': {'title': place, 'pleiades id': pl_id, 'person connection': person, 'citations': []}
+											} #in datadict creates key for ID and relevant values; does not need to append bc this data is /not/ citation dependent
 	
-	entries = make_jobj(citations, pair_data) #function to combine dict data
-	json.dump(entries, z, indent=4) #writes entries to json outfile (use json.dumps to continue work within program)
+	features = make_jobj(citations, pair_data) #combine dict data into geoJSON readable format
+	json.dump(features, z, indent=4) #writes entries to json outfile (use json.dumps to continue work within program)
 

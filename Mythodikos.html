@@ -1,0 +1,123 @@
+<!--
+Code for development of the Mythodikos webmap.
+-->
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+
+	<title>Mythodikos</title>
+
+	<!--the meta element disables unwanted scaling of the page when viewed on mobile devices-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<!--this is a reference to the Leaflet CSS file-->
+	<link
+	rel="stylesheet" 
+	href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+	integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+	crossorigin=""
+	/>
+
+	<!--this is a refence to the Leaflet JavaScript file; it must be included after the CSS-->
+	<script
+	src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+	integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+	crossorigin=""
+	></script>
+
+	<!--reference to JQuery file to use $.getJSON-->
+	<script 
+	src="https://code.jquery.com/jquery-3.6.0.js" 
+	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
+	crossorigin="anonymous">
+	</script>
+
+	<!--style settings currently for full screen web map with legend; may want to create external style sheet and link out to it, i.e. <link rel="stylesheet" href="mythodikosStyle.css" /> -->
+	<style>
+		body {
+			padding: 0;
+			margin: 0;
+		}
+		
+		html, body, #map {
+			height: 100%;
+			width: 100%;
+		}
+
+		.legend {
+			width: 250px;
+			font-size: 16px;
+			color: #333333;
+			font-family: "Open Sans", Helvetica, sans-serif;
+			padding: 10px 14px;
+			background-color: rgba(245,245,220,0.8);
+			box-shadow: 0 0 15px rgba(0,0,0,0.2);
+			border-radius: 5px;
+			border: 1px solid grey;
+		}
+		.legend img {
+			width: 200px;
+			margin: auto;
+			display: block;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<div id="map"></div>
+	<script src="corpus-test-12-19.geojson"></script>
+
+	<!--this script is JavaScript, may want to put in external file and link out to it for best practice, i.e. <script src='leafletmap.js'></script> -->
+	<script>
+		//initialize map
+		var map = L.map('map',{scrollWheelZoom:true}).setView([39.60071, 22.29807], 5); //establish map variable and set initial view to specified coordinates (at lat, lon) & zoom level
+
+		//load tile layer
+		L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', { //call map tile layer
+			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+			subdomains: 'abcd',
+			maxZoom: 18
+		}).addTo(map);
+
+		//add a legend to the map
+		var legend = L.control({position: "bottomleft"});
+		legend.onAdd = function() {
+			let div = L.DomUtil.create("div", "legend");
+			div.innerHTML =
+			'<p><b>The Mythodikos Project</b></p><hr>' +
+			'<p>This map represents the data collected ' +
+			'as part of the mythodikos project.</p>' +
+			'The following features will eventually ' +
+			'be included as part of this map:<br>' +
+			'<p><ul>' +
+			'<li>Markers for each data point</li>' +
+			'<li>Popups with metadata for each point</li>' +
+			'<li>A basic search function</li>' +
+			'</ul></p>' +
+			'<hr>' + 
+			'Created with the Leaflet library<br>';
+			return div;
+		};
+		legend.addTo(map);
+
+		//here's where the trouble starts
+		$.getJSON("corpus-test-12-19.geojson", function(data) {
+			//add geojson layer to map once file has loaded
+			L.geoJson(data, {
+				pointToLayer: function(feature, latlng){
+					var marker = L.marker(latlng);
+					marker.bindPopup(feature.properties.place);
+					return L.marker(latlng);
+				}
+			}).addTo(map);
+		});
+
+	</script>
+
+</body>
+</html>
+

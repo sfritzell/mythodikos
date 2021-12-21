@@ -98,7 +98,7 @@ NEXT STEPS:
 				maxZoom: 18
 			}).addTo(map);
 
-			var placeLayer = L.geoJSON(data, {
+			var placeLayer = L.geoJSON(data.responseJSON, {
 
 				onEachFeature: function(feature, layer) {
 

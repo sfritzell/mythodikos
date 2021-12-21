@@ -1,0 +1,144 @@
+<!-- 
+This is html for displaying the Mythodikos webmap
+Adapted from MOLeaflet.html
+
+NEXT STEPS:
+1. add to github pages
+2. test calling external geojson from github directory
+3. change info popup style
+-->
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<html>
+
+<head>
+
+	<title>Mythodikos</title>
+
+	<!--the meta element disables unwanted scaling of the page when viewed on mobile devices-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<!--this is a reference to the Leaflet CSS file; CSS files must be called before JavaScript links-->
+	<link
+	rel="stylesheet" 
+	href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+	integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+	crossorigin=""
+	/>
+
+	<!--this is a reference to the easybutton CSS file-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+
+	<!--this is a link to use google icons-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<!--these are borrowed from Living Campus-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.8/src/leaflet-search.min.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+	<!--this is a refence to the Leaflet JavaScript file; it must be included after the CSS-->
+	<script
+	src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+	integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+	crossorigin=""
+	></script>
+
+	<!--this is a reference to the easybutton JavaScript-->
+	<script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+
+	<!--these are borrowed from Living Campus-->
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.8/dist/leaflet-search.src.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
+	<!--fullscreen #map, others borrowed from Living Campus-->
+	<style type="text/css">
+
+		body {
+			padding: 0;
+			margin: 0;
+		}
+
+		html, body, #map {
+			height: 100%;
+			width: 100%;
+		}
+
+	</style>
+
+</head>
+
+<body>
+	
+	<div id="map"></div>
+	
+	<!--JavaScript to build map-->
+	<script type="text/javascript">
+
+		var data = $.ajax({
+			url: "corpus-test-12-19.geojson",
+			dataType: "json",
+			success: console.log("Data successfully loaded!"),
+			error: function(xhr) {
+				alert(xhr.statusText)
+			}
+		});
+
+		$.when(data).done(function() {
+
+			//initialize map
+			var map = L.map("map", {scrollWheelZoom:true}).setView([39.60071, 22.29807], 5);
+
+			//load tile layer
+			L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+				attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+				subdomains: 'abcd',
+				maxZoom: 18
+			}).addTo(map);
+
+			var placeLayer = L.geoJSON(data, {
+
+				onEachFeature: function(feature, layer) {
+
+					layer.bindPopup("<h1>"+feature.properties.place+"</h1><p>Pleiades ID: "+feature.properties.id+"</p><p>Person Connection: "+feature.properties.person+"</p><p>Citations: "+feature.properties.citations+"</p>");
+					layer.on("mouseover", function() {
+						this.openPopup();
+					});
+					layer.on("mouseout", function() {
+						this.closePopup();
+					});
+				}
+
+			}).addTo(map);
+
+			//create info popup and load to map
+			var infoPopup = L.popup().setContent(
+				"<p>Maps allow us to visualize more than just landmarks. They also enable us to consider the migration of people, the history of trade routes, and the exchange of culture. The Mythodikos project, Ancient Greek for 'connected to myth', will create a dataset and searchable map-interface which will allow a student or scholar to consider mythological figures not just as they are associated with particular texts, authors, and traditions of writing, but also as they are connected to various geographical spaces. Unlike traditional forms of scholarship concerned with literature and mythology, which are readily capable of dealing with questions of Who, What, and even How, this mapping project will open up consideration of the question of Where a particular mythological figure appears in literary accounts. Mythodikos will allow us to consider the movement of a particular figure throughout space, speculate on the geographical scope in which their story was transmitted, and imagine the connections between certain localities on account of their shared association with a mythological figure.</p><p>Mythodikos is currently in the middle stages of its development.   Work has been done to develop a text-mining tool using Python and Natural Language Processing methods that can be used to search the Perseus Digital Library Greek corpus for a test set of person-place connections and to record these search results as a preliminary dataset.  Current stages of work involve integration of ancient geographical data provided by Pleiades (https://pleiades.stoa.org/) with the current dataset, and development of a preliminary LeafletJS map that draws upon this information.  Future work will include expansion of the initial dataset in Greek, and development of a similar framework for incorporating information from Latin texts.</p><p>The Mythodikos project has been developed by Stella Fritzell (PhD Candidate at Bryn Mawr College) in consultation with Radcliffe Edmonds, Alice McGrath, and Alicia Peaker.</p>"
+				);
+			L.easyButton('<i class="material-icons">info_outline</i>', function(btn, map){
+				infoPopup.setLatLng(map.getCenter()).openOn(map);
+			}).addTo(map);
+
+			//add search function
+			var controlSearch = new L.Control.Search({
+				position: 'topleft',
+				layer: placeLayer,
+				propertyName: 'person',
+				initial: false,
+				marker: false,
+				textPlaceholder: 'Search...',
+				textErr: 'Name not found'
+			});
+			map.addControl(controlSearch);
+	
+		});
+		
+		
+
+	</script>
+
+</body>
+
+</html>

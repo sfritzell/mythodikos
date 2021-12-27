@@ -3,9 +3,9 @@ This is html for displaying the Mythodikos webmap
 Adapted from MOLeaflet.html
 
 NEXT STEPS:
-1. add to github pages
-2. test calling external geojson from github directory
-3. change info popup style
+1. define popup for search results
+2. set search for multiple results (may require new function)
+(3. consider marker clusters)
 -->
 
 <!DOCTYPE html>
@@ -91,7 +91,7 @@ NEXT STEPS:
 	<script type="text/javascript">
 
 		var data = $.ajax({
-			url: "corpus-test-12-19.geojson",
+			url: "corpus-test-12-27.geojson",
 			dataType: "json",
 			success: console.log("Data successfully loaded!"),
 			error: function(xhr) {
@@ -113,6 +113,13 @@ NEXT STEPS:
 
 			var placeLayer = L.geoJSON(data.responseJSON, {
 
+				//set initial layer markers as not visible
+				pointToLayer: function(feature, latlng) {
+					var baseMarker = new L.marker(latlng, {opacity: 0});
+					return marker
+				},
+
+				//define popup content and event
 				onEachFeature: function(feature, layer) {
 
 					layer.bindPopup("<h1>"+feature.properties.place+"</h1><p>Pleiades ID: "+feature.properties.id+"</p><p>Person Connection: "+feature.properties.person+"</p><p>Citations: "+feature.properties.citations+"</p>");
@@ -127,20 +134,20 @@ NEXT STEPS:
 			}).addTo(map);
 
 			//create info popup and load to map
-			var infoPopup = L.popup().setContent(
-				"<p>Maps allow us to visualize more than just landmarks. They also enable us to consider the migration of people, the history of trade routes, and the exchange of culture. The Mythodikos project, Ancient Greek for 'connected to myth', will create a dataset and searchable map-interface which will allow a student or scholar to consider mythological figures not just as they are associated with particular texts, authors, and traditions of writing, but also as they are connected to various geographical spaces. Unlike traditional forms of scholarship concerned with literature and mythology, which are readily capable of dealing with questions of Who, What, and even How, this mapping project will open up consideration of the question of Where a particular mythological figure appears in literary accounts. Mythodikos will allow us to consider the movement of a particular figure throughout space, speculate on the geographical scope in which their story was transmitted, and imagine the connections between certain localities on account of their shared association with a mythological figure.</p><p>Mythodikos is currently in the middle stages of its development.   Work has been done to develop a text-mining tool using Python and Natural Language Processing methods that can be used to search the Perseus Digital Library Greek corpus for a test set of person-place connections and to record these search results as a preliminary dataset.  Current stages of work involve integration of ancient geographical data provided by Pleiades (https://pleiades.stoa.org/) with the current dataset, and development of a preliminary LeafletJS map that draws upon this information.  Future work will include expansion of the initial dataset in Greek, and development of a similar framework for incorporating information from Latin texts.</p><p>The Mythodikos project has been developed by Stella Fritzell (PhD Candidate at Bryn Mawr College) in consultation with Radcliffe Edmonds, Alice McGrath, and Alicia Peaker.</p>"
+			var infoPopup = L.popup({maxWidth: 700}).setContent(
+				"<p><b>Mythodikos: Digital Visualization of Mythical People & Places</b></p><p>The Mythodikos project, Ancient Greek for 'connected to myth', is intended to allow a student or scholar to consider mythological figures not just as they are associated with particular texts, authors, and traditions of writing, but also as they are connected to various geographical spaces.</p><hr><p>To use the Mythodikos map interface, begin typing the name of a mythical figure into the search tool.  A list of suggested reults will appear.  If your search term is not currently available in the database, a 'Name not found' message will appear.  For each search, the map will display the geographic point(s) associated with the search term.  Hover over a point to display a popup containing the place name, associated Pleiades ID number, and a list of citations supporting the person-place connection called by the search.</p><hr><p>Data for the Mythodikos project has been generated from the Perseus Digital Library Greek corpus using a text-mining tool built in Python. Geographic data and coordinates are provided by Pleiades (https://pleiades.stoa.org). The Mythodikos project has been developed by Stella Fritzell (PhD Candidate at Bryn Mawr College) in consultation with Radcliffe Edmonds, Alice McGrath, and Alicia Peaker.</p><p>Planned future work includes:<br><p><ul><li>accurate display of popup data within search results</li><li>adaptation of search tool to allow multiple results</li><li>expansion of people and places represented in dataset</li><li>eventual inclusion of Latin literature in data collection</li></ul></p>"
 				);
 			L.easyButton('<i class="material-icons">info_outline</i>', function(btn, map){
 				infoPopup.setLatLng(map.getCenter()).openOn(map);
 			}).addTo(map);
 
-			//add search function
+			//add search function; NEED TO DEFINE SEPECIAL MARKER TYPE WITH BOUND POPUP
 			var controlSearch = new L.Control.Search({
 				position: 'topleft',
 				layer: placeLayer,
 				propertyName: 'person',
 				initial: false,
-				marker: {},
+				marker: {icon: true, circle: false},
 				textPlaceholder: 'Search...',
 				textErr: 'Name not found'
 			});

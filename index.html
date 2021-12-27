@@ -111,27 +111,27 @@ NEXT STEPS:
 				maxZoom: 18
 			}).addTo(map);
 
-			var placeLayer = L.geoJSON(data.responseJSON, {
+			//var placeLayer = L.geoJSON(data.responseJSON, {
 
 				//set initial layer markers as not visible
-				pointToLayer: function(feature, latlng) {
-					var baseMarker = new L.marker(latlng, {opacity: 0});
-					return marker
-				},
+				//pointToLayer: function(feature, latlng) {
+				//	var baseMarker = new L.marker(latlng, {opacity: 0});
+				//	return marker
+				//},
 
 				//define popup content and event
-				onEachFeature: function(feature, layer) {
+				//onEachFeature: function(feature, layer) {
 
-					layer.bindPopup("<h1>"+feature.properties.place+"</h1><p>Pleiades ID: "+feature.properties.id+"</p><p>Person Connection: "+feature.properties.person+"</p><p>Citations: "+feature.properties.citations+"</p>");
-					layer.on("mouseover", function() {
-						this.openPopup();
-					});
-					layer.on("mouseout", function() {
-						this.closePopup();
-					});
-				}
+				//	layer.bindPopup("<h1>"+feature.properties.place+"</h1><p>Pleiades ID: "+feature.properties.id+"</p><p>Person Connection: "+feature.properties.person+"</p><p>Citations: "+feature.properties.citations+"</p>");
+				//	layer.on("mouseover", function() {
+				//		this.openPopup();
+				//	});
+				//	layer.on("mouseout", function() {
+				//		this.closePopup();
+				//	});
+				//}
 
-			}).addTo(map);
+			//}).addTo(map);
 
 			//create info popup and load to map
 			var infoPopup = L.popup({maxWidth: 700}).setContent(
@@ -144,13 +144,38 @@ NEXT STEPS:
 			//add search function; NEED TO DEFINE SEPECIAL MARKER TYPE WITH BOUND POPUP
 			var controlSearch = new L.Control.Search({
 				position: 'topleft',
-				layer: placeLayer,
+				layer: L.geoJSON(data.responseJSON, {
+					//set initial layer markers as not visible
+					pointToLayer: function(feature, latlng) {
+						var baseMarker = new L.marker(latlng, {opacity: 0});
+						return baseMarker
+					},
+
+					//define popup content and event
+					onEachFeature: function(feature, layer) {
+
+						var popup = L.popup({maxHeight: 140})
+							.setContent("<h1>"+feature.properties.place+"</h1><p>Pleiades ID: "+feature.properties.id+"</p><p>Person Connection: "+feature.properties.person+"</p><p>Citations: "+feature.properties.citations+"</p>");
+						layer.bindPopup(popup);
+						//layer.on("mouseover", function() {
+						//	this.openPopup();
+						//});
+						//layer.on("mouseout", function() {
+						//	this.closePopup();
+						//});
+					}
+				}),
 				propertyName: 'person',
 				initial: false,
 				marker: {icon: true, circle: false},
 				textPlaceholder: 'Search...',
 				textErr: 'Name not found'
 			});
+
+			controlSearch.on("search:locationfound", function(event) {
+				event.layer.openPopup(); //automatically open popup for search result
+			});
+
 			map.addControl(controlSearch);
 	
 		});

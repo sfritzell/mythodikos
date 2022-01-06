@@ -3,9 +3,10 @@ This is html for displaying the Mythodikos webmap
 Adapted from MOLeaflet.html
 
 NEXT STEPS:
-1. define popup for search results
+1. allow popup on click or hover for search results
 2. set search for multiple results (may require new function)
-(3. consider marker clusters)
+(3. allow citation of Greek text)
+(4. consider marker clusters)
 -->
 
 <!DOCTYPE html>
@@ -57,7 +58,6 @@ NEXT STEPS:
 	src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" 
 	integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" 
 	crossorigin="anonymous">
-		
 	</script>
 
 	<!--this is a reference to the easybutton JavaScript-->
@@ -66,7 +66,7 @@ NEXT STEPS:
 	<!--this is a reference to the search control JavaScript-->
 	<script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.8/dist/leaflet-search.src.min.js"></script>
 
-	<!--fullscreen #map, others borrowed from Living Campus-->
+	<!--CSS for fullscreen #map-->
 	<style type="text/css">
 
 		body {
@@ -75,8 +75,8 @@ NEXT STEPS:
 		}
 
 		html, body, #map {
-			height: 100%;
-			width: 100%;
+			height: 100vh;
+			width: 100vw;
 		}
 
 	</style>
@@ -88,10 +88,11 @@ NEXT STEPS:
 	<div id="map"></div>
 	
 	<!--JavaScript to build map-->
-	<script type="text/javascript">
+	<script type="text/javascript"> //type specificaiton not necessary, JavaScript = default html script
 
+		//load geojson file as data
 		var data = $.ajax({
-			url: "corpus-test-12-19.geojson",
+			url: "corpus-test-1-5.geojson",
 			dataType: "json",
 			success: console.log("Data successfully loaded!"),
 			error: function(xhr) {
@@ -111,6 +112,7 @@ NEXT STEPS:
 				maxZoom: 18
 			}).addTo(map);
 
+			//create vector layer
 			var placeLayer = L.geoJSON(data.responseJSON, {
 
 				//set initial layer markers as not visible
@@ -119,43 +121,48 @@ NEXT STEPS:
 					return baseMarker
 				},
 
-				//define popup content and event
+				//define popup content and event; TRY: BIND EVENT REPONSES TO POPUP VARIABLE
 				onEachFeature: function(feature, layer) {
-					var popup = L.popup({maxHeight: 140})
+					var dataPopup = L.popup({maxHeight: 140})
 						.setContent("<h1>"+feature.properties.place+"</h1><p>Pleiades ID: "+feature.properties.id+"</p><p>Person Connection: "+feature.properties.person+"</p><p>Citations: "+feature.properties.citations+"</p>");
-					layer.bindPopup(popup);
-				//	layer.on("mouseover", function() {
-				//		this.openPopup();
-				//	});
-				//	layer.on("mouseout", function() {
-				//		this.closePopup();
-				//	});
+					layer.bindPopup(dataPopup);
+					/*
+					layer.on("click", function() {
+						this.openPopup();
+					});
+					layer.on("click", function() {
+						this.closePopup();
+					});
+					*/
 				}
 			});
 
-			//create info popup and load to map
-			var infoPopup = L.popup({maxWidth: 700}).setContent(
+			//create info popup style and contents
+			var infoPopup = L.popup({width: window.innerWidth, maxHeight: 600}).setContent(
 				"<p><b>Mythodikos: Digital Visualization of Mythical People & Places</b></p><p>The Mythodikos project, Ancient Greek for 'connected to myth', is intended to allow a student or scholar to consider mythological figures not just as they are associated with particular texts, authors, and traditions of writing, but also as they are connected to various geographical spaces.</p><hr><p>To use the Mythodikos map interface, begin typing the name of a mythical figure into the search tool.  A list of suggested reults will appear.  If your search term is not currently available in the database, a 'Name not found' message will appear.  For each search, the map will display the geographic point(s) associated with the search term.  Hover over a point to display a popup containing the place name, associated Pleiades ID number, and a list of citations supporting the person-place connection called by the search.</p><hr><p>Data for the Mythodikos project has been generated from the Perseus Digital Library Greek corpus using a text-mining tool built in Python. Geographic data and coordinates are provided by Pleiades (https://pleiades.stoa.org). The Mythodikos project has been developed by Stella Fritzell (PhD Candidate at Bryn Mawr College) in consultation with Radcliffe Edmonds, Alice McGrath, and Alicia Peaker.</p><p>Planned future work includes:<br><p><ul><li>accurate display of popup data within search results</li><li>adaptation of search tool to allow multiple results</li><li>expansion of people and places represented in dataset</li><li>eventual inclusion of Latin literature in data collection</li></ul></p>"
 				);
+
+			//define info popup button and load to map
 			L.easyButton('<i class="material-icons">info_outline</i>', function(btn, map){
 				infoPopup.setLatLng(map.getCenter()).openOn(map);
 			}).addTo(map);
 
-			//add search function; NEED TO DEFINE SEPECIAL MARKER TYPE WITH BOUND POPUP
+			//define search control properties; TO-DO: DEFINE SEPECIAL MARKER TYPE WITH BOUND POPUP
 			var controlSearch = new L.Control.Search({
 				position: 'topleft',
 				layer: placeLayer,
-				propertyName: 'person',
+				propertyName: 'person', //geojson property to be searched
 				initial: false,
-				marker: {icon: true, circle: false},
+				marker: {icon: true, circle: false}, //create marker, no default animated circle
 				textPlaceholder: 'Search...',
 				textErr: 'Name not found'
 			});
 
 			controlSearch.on("search:locationfound", function(event) {
-				event.layer.openPopup(); //automatically open popup for search result
+				event.layer.openPopup(dataPopup); //automatically open popup for search result
 			});
 
+			//load search control to map
 			map.addControl(controlSearch);
 	
 		});

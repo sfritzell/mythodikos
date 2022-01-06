@@ -124,7 +124,7 @@ NEXT STEPS:
 				//define popup content and event; TRY: BIND EVENT REPONSES TO POPUP VARIABLE
 				onEachFeature: function(feature, layer) {
 					var dataPopup = L.popup({maxHeight: 140})
-						.setContent("<h1>"+feature.properties.place+"</h1><p>Pleiades ID: "+feature.properties.id+"</p><p>Person Connection: "+feature.properties.person+"</p><p>Citations: "+feature.properties.citations+"</p>");
+						.setContent("<h1>"+feature.properties.place+"</h1><p>Pleiades ID: "+feature.properties.id+"</p><p>Person Connection: "+feature.properties.person+"</p><p>Citations: "+feature.properties.citations+"</p>")
 					layer.bindPopup(dataPopup);
 					/*
 					layer.on("click", function() {

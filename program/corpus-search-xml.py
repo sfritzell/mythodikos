@@ -116,8 +116,8 @@ def make_jobj(dict1, dict2): #function to merge complex dicts at correct level a
 # Program
 # =====================================================================
 
-greekcorpusdir = "/Users/stellafritzell/mythodikos/canonical-greekLit-master" #directory with files for text mining
-outfile = "/Users/stellafritzell/mythodikos/corpus-test-12-18.json" #file to write search data, change file type to .json with .json search
+greekcorpusdir = "~/mythodikos/canonical-greekLit-master" #directory with files for text mining
+outfile = "~/mythodikos/corpus-test-12-18.json" #file to write search data, change file type to .json with .json search
 
 #build geojson file with desired search metadata
 with open(outfile, 'w') as z: #to access/create the outfile for data from text-mining

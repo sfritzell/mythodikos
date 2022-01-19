@@ -45,10 +45,10 @@ def get_names(name_info): #to get a list of alternate names for desired items
 # Program
 # =====================================================================
 
-infile = "/Users/stellafritzell/mythodikos/pleiades-places-latest.json"
+infile = "~/mythodikos/pleiades-places-latest.json"
 # web url: http://atlantides.org/downloads/pleiades/json/pleiades-places-latest.json.gz
 
-outfile = "/Users/stellafritzell/mythodikos/clean-pleiades.json"
+outfile = "~/mythodikos/clean-pleiades.json"
 
 with open(outfile, 'w') as z:
 	with open(infile) as x:

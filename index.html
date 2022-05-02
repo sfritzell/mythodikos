@@ -3,8 +3,8 @@ This is html for displaying the Mythodikos webmap
 Adapted from MOLeaflet.html
 
 NEXT STEPS:
-1. allow popup on click or hover for search results
-2. set search for multiple results (may require new function)
+1. assign unique colors to each layer
+2. streamline creation of filtered data layers
 (3. allow citation of Greek text)
 (4. consider marker clusters)
 -->
@@ -24,8 +24,8 @@ NEXT STEPS:
 	<!--this is a reference to the Leaflet CSS file; CSS files must be called before JavaScript links-->
 	<link
 	rel="stylesheet" 
-	href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-	integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+	href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+	integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
 	crossorigin=""
 	/>
 
@@ -43,8 +43,8 @@ NEXT STEPS:
 
 	<!--this is a refence to the Leaflet JavaScript file; it must be included after the CSS-->
 	<script
-	src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-	integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+	src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+	integrity="ssha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
 	crossorigin=""
 	></script>
 
@@ -90,7 +90,7 @@ NEXT STEPS:
 	<!--JavaScript to build map-->
 	<script type="text/javascript"> //type specificaiton not necessary, JavaScript = default html script
 
-		//load geojson file as data
+		//load geojson file as data - consider changing geojson file to javascript file with a variable name (making it an array)
 		var data = $.ajax({
 			url: "corpus-test-1-5.geojson",
 			dataType: "json",
@@ -112,30 +112,136 @@ NEXT STEPS:
 				maxZoom: 18
 			}).addTo(map);
 
-			//create vector layer
-			var placeLayer = L.geoJSON(data.responseJSON, {
+			//create empty layers for filtered data, update alongside person_file
+			var achillesLayer = L.layerGroup();
+			var actaeonLayer = L.layerGroup();
+			var adonisLayer = L.layerGroup();
+			var amymoneLayer = L.layerGroup();
+			var	andromedaLayer = L.layerGroup();
+			var antiopeLayer = L.layerGroup();
+			var arachneLayer = L.layerGroup();
+			var arionLayer = L.layerGroup();
+			var	ascalabusLayer = L.layerGroup();
+			var asclepiusLayer = L.layerGroup();
+			var atalantaLayer = L.layerGroup();
+			var	bellerophonLayer = L.layerGroup();
+			var busirisLayer = L.layerGroup();
+			var	cadmusLayer = L.layerGroup();
+			var callistoLayer = L.layerGroup();
+			var cecropsLayer = L.layerGroup();
+			var coronisLayer = L.layerGroup();
+			var cycnusLayer = L.layerGroup();
+			var cyparissusLayer = L.layerGroup();
+			var cyreneLayer = L.layerGroup();
+			var danaeLayer = L.layerGroup();
+			var deucalionLayer = L.layerGroup();
+			var diomedesLayer = L.layerGroup();
+			var endymionLayer = L.layerGroup();
+			var erysicthonLayer = L.layerGroup();
+			var eryxLayer = L.layerGroup();
+			var europaLayer = L.layerGroup();
+			var euadneLayer = L.layerGroup();
 
-				//set initial layer markers as not visible
-				pointToLayer: function(feature, latlng) {
-					var baseMarker = new L.marker(latlng, {opacity: 0});
-					return baseMarker
-				},
+			var hippolytaLayer = L.layerGroup();
+
+			var meleagerLayer = L.layerGroup();
+			var midasLayer = L.layerGroup();
+
+			var narcissusLayer = L.layerGroup();
+
+			var pasiphaeLayer = L.layerGroup();
+			var pelopsLayer = L.layerGroup();
+
+
+			//create base data layer and filter data
+			var placeLayer = L.geoJSON(data.responseJSON, {
 
 				//define popup content and event; TRY: BIND EVENT REPONSES TO POPUP VARIABLE
 				onEachFeature: function(feature, layer) {
 					var dataPopup = L.popup({maxHeight: 140})
 						.setContent("<h1>"+feature.properties.place+"</h1><p>Pleiades ID: "+feature.properties.id+"</p><p>Person Connection: "+feature.properties.person+"</p><p>Citations: "+feature.properties.citations+"</p>")
 					layer.bindPopup(dataPopup);
-					/*
-					layer.on("click", function() {
-						this.openPopup();
-					});
-					layer.on("click", function() {
-						this.closePopup();
-					});
-					*/
+
+					//sort data to appropriate layers -- update with empty layers
+					var figure = feature.properties.person;
+					if (figure == "Achilles") layer.addTo(achillesLayer);
+					else if (figure == "Actaeon") layer.addTo(actaeonLayer);
+					else if (figure == "Adonis") layer.addTo(adonisLayer);
+					else if (figure == "Amymone") layer.addTo(amymoneLayer);
+					else if (figure == "Andromeda") layer.addTo(andromedaLayer);
+					else if (figure == "Antiope") layer.addTo(antiopeLayer);
+					else if (figure == "Arachne") layer.addTo(arachneLayer);
+					else if (figure == "Arion") layer.addTo(arionLayer);
+					else if (figure == "Ascalabus") layer.addTo(ascalabusLayer);
+					else if (figure == "Asclepius") layer.addTo(asclepiusLayer);
+					else if (figure == "Atalanta") layer.addTo(atalantaLayer);
+					else if (figure == "Bellerophon") layer.addTo(bellerophonLayer);
+					else if (figure == "Busiris") layer.addTo(busirisLayer);
+					else if (figure == "Cadmus") layer.addTo(cadmusLayer);
+					else if (figure == "Callisto") layer.addTo(callistoLayer);
+					else if (figure == "Cecrops") layer.addTo(cecropsLayer);
+					else if (figure == "Coronis") layer.addTo(coronisLayer);
+					else if (figure == "Cycnus") layer.addTo(cycnusLayer);
+					else if (figure == "Cyparissus") layer.addTo(cyparissusLayer);
+					else if (figure == "Cyrene") layer.addTo(cyreneLayer);
+					else if (figure == "Danae") layer.addTo(danaeLayer);
+					else if (figure == "Deucalion") layer.addTo(deucalionLayer);
+					else if (figure == "Diomedes") layer.addTo(diomedesLayer);
+					else if (figure == "Endymion") layer.addTo(endymionLayer);
+					else if (figure == "Erysicthon") layer.addTo(erysicthonLayer);
+					else if (figure == "Eyrx") layer.addTo(eryxLayer);
+					else if (figure == "Europa") layer.addTo(europaLayer);
+					else if (figure == "Euadne") layer.addTo(euadneLayer);
+					else if (figure == "Hippolyta") layer.addTo(hippolytaLayer);
+					else if (figure == "Meleager") layer.addTo(meleagerLayer);
+					else if (figure == "Midas") layer.addTo(midasLayer);
+					else if (figure == "Narcissus") layer.addTo(narcissusLayer);
+					else if (figure == "Pasiphae") layer.addTo(pasiphaeLayer);
+					else if (figure == "Pelops") layer.addTo(pelopsLayer);
+
 				}
 			});
+
+			//make key:value definition for layers included in layer control -- update with empty layers
+			var overlayMaps = {
+				"Achilles": achillesLayer,
+				"Actaeon":actaeonLayer,
+				"Adonis": adonisLayer,
+				"Amymone": amymoneLayer,
+				"Andromeda": andromedaLayer,
+				"Antiope": antiopeLayer,
+				"Arachne": arachneLayer,
+				"Arion": arionLayer,
+				"Ascalabus": ascalabusLayer,
+				"Asclepius": asclepiusLayer,
+				"Atalanta": atalantaLayer,
+				"Bellerophon": bellerophonLayer,
+				"Busiris": busirisLayer,
+				"Cadmus": cadmusLayer,
+				"Callisto": callistoLayer,
+				"Cecrops": cecropsLayer,
+				"Coronis": coronisLayer,
+				"Cycnus": cycnusLayer,
+				"Cyparissus": cyparissusLayer,
+				"Cyrene": cyreneLayer,
+				"Danae": danaeLayer,
+				"Deucalion": deucalionLayer,
+				"Diomedes": diomedesLayer,
+				"Endymion": endymionLayer,
+				"Erysicthon": erysicthonLayer,
+				"Eryx": eryxLayer,
+				"Europa": europaLayer,
+				"Euadne": euadneLayer,
+				"Hippolyta": hippolytaLayer,
+				"Meleager": meleagerLayer,
+				"Midas": midasLayer,
+				"Narcissus": narcissusLayer,
+				"Pasiphae": pasiphaeLayer,
+				"Pelops": pelopsLayer
+			};
+
+			//initialize layer contorl
+			var layerControl = L.control.layers(null, overlayMaps).addTo(map);
 
 			//create info popup style and contents
 			var infoPopup = L.popup({width: window.innerWidth, maxHeight: 600}).setContent(
@@ -146,24 +252,6 @@ NEXT STEPS:
 			L.easyButton('<i class="material-icons">info_outline</i>', function(btn, map){
 				infoPopup.setLatLng(map.getCenter()).openOn(map);
 			}).addTo(map);
-
-			//define search control properties; TO-DO: DEFINE SEPECIAL MARKER TYPE WITH BOUND POPUP
-			var controlSearch = new L.Control.Search({
-				position: 'topleft',
-				layer: placeLayer,
-				propertyName: 'person', //geojson property to be searched
-				initial: false,
-				marker: {icon: true, circle: false}, //create marker, no default animated circle
-				textPlaceholder: 'Search...',
-				textErr: 'Name not found'
-			});
-
-			controlSearch.on("search:locationfound", function(event) {
-				event.layer.openPopup(); //automatically open popup for search result
-			});
-
-			//load search control to map
-			map.addControl(controlSearch);
 	
 		});
 		

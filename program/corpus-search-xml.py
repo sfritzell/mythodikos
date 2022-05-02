@@ -100,7 +100,7 @@ def make_citation(line, text): #function to get the full citaiton information fo
 				continue
 		return line_num #print the line number
 
-	cite_item = text_author + ' , ' + text_title + ' , ' + get_section(line) + '.' + get_linenum(line) + ':' + text
+	cite_item = ' ' + text_author + ', ' + text_title + ' ' + get_section(line) + '.' + get_linenum(line) #+ ':' + text
 	return cite_item
 
 def make_jobj(dict1, dict2): #function to merge complex dicts at correct level and build geoJSON file
@@ -116,8 +116,8 @@ def make_jobj(dict1, dict2): #function to merge complex dicts at correct level a
 # Program
 # =====================================================================
 
-greekcorpusdir = "~/mythodikos/canonical-greekLit-master" #directory with files for text mining
-outfile = "~/mythodikos/corpus-test-12-18.json" #file to write search data, change file type to .json with .json search
+greekcorpusdir = "/Users/stellafritzell/mythodikos/canonical-greekLit-master" #directory with files for text mining
+outfile = "/Users/stellafritzell/mythodikos/corpus-test-5-2.geojson" #file to write search data, change file type to .json with .json search
 
 #build geojson file with desired search metadata
 with open(outfile, 'w') as z: #to access/create the outfile for data from text-mining
@@ -156,8 +156,9 @@ with open(outfile, 'w') as z: #to access/create the outfile for data from text-m
 										citations[ID].append(citation) #in citedict creates key for ID (if new) and appends citation as value in list
 										pair_data[ID] = {
 											'type': 'Feature', 
-											'geometry': {'type': 'Point', 'coordinates': pl_gps}, 
-											'properties': {'title': place, 'pleiades id': pl_id, 'person connection': person, 'citations': []}
+											'geometry': {'type': 'Point', 'coordinates': pl_gps},
+											'id': ID, 
+											'properties': {'place': place, 'id': pl_id, 'person': person, 'citations': []}
 											} #in datadict creates key for ID and relevant values; does not need to append bc this data is /not/ citation dependent
 	
 	features = make_jobj(citations, pair_data) #combine dict data into geoJSON readable format

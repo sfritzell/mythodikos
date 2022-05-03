@@ -3,10 +3,10 @@ This is html for displaying the Mythodikos webmap
 Adapted from MOLeaflet.html
 
 NEXT STEPS:
-1. assign unique colors to each layer
-2. streamline creation of filtered data layers
-(3. allow citation of Greek text)
-(4. consider marker clusters)
+1. update info/about popup
+2. assign unique colors to each layer
+3. streamline creation of filtered data layers
+(4. allow citation of Greek text)
 -->
 
 <!DOCTYPE html>
@@ -29,6 +29,12 @@ NEXT STEPS:
 	crossorigin=""
 	/>
 
+	<!--this is a reference to the marker cluster style sheet-->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+
+	<!--this is a reference to the marker cluster default style sheet-->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+
 	<!--this is a reference to the easybutton CSS file-->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
 
@@ -41,6 +47,12 @@ NEXT STEPS:
 	integrity="ssha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
 	crossorigin=""
 	></script>
+
+	<!--this is a reference to the marker cluster JavaScript file-->
+	<script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+
+	<!--this is a reference to the FeatureGroup.SubGroup plugin to work with clustering-->
+	<script src="https://unpkg.com/leaflet.featuregroup.subgroup@1.0.2/dist/leaflet.featuregroup.subgroup.js"></script>
 
 	<!--this is a reference to the easybutton JavaScript-->
 	<script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
@@ -91,45 +103,48 @@ NEXT STEPS:
 				maxZoom: 18
 			}).addTo(map);
 
+			//create marker cluster group
+			var mcg = markerClusterGroup().addTo(map);
+
 			//create empty layers for filtered data, update alongside person_file
-			var achillesLayer = L.layerGroup();
-			var actaeonLayer = L.layerGroup();
-			var adonisLayer = L.layerGroup();
-			var amymoneLayer = L.layerGroup();
-			var andromedaLayer = L.layerGroup();
-			var antiopeLayer = L.layerGroup();
-			var arachneLayer = L.layerGroup();
-			var arionLayer = L.layerGroup();
-			var ascalabusLayer = L.layerGroup();
-			var asclepiusLayer = L.layerGroup();
-			var atalantaLayer = L.layerGroup();
-			var bellerophonLayer = L.layerGroup();
-			var busirisLayer = L.layerGroup();
-			var cadmusLayer = L.layerGroup();
-			var callistoLayer = L.layerGroup();
-			var cecropsLayer = L.layerGroup();
-			var coronisLayer = L.layerGroup();
-			var cycnusLayer = L.layerGroup();
-			var cyparissusLayer = L.layerGroup();
-			var cyreneLayer = L.layerGroup();
-			var danaeLayer = L.layerGroup();
-			var deucalionLayer = L.layerGroup();
-			var diomedesLayer = L.layerGroup();
-			var endymionLayer = L.layerGroup();
-			var erysicthonLayer = L.layerGroup();
-			var eryxLayer = L.layerGroup();
-			var europaLayer = L.layerGroup();
-			var euadneLayer = L.layerGroup();
+			var achillesLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var actaeonLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var adonisLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var amymoneLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var	andromedaLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var antiopeLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var arachneLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var arionLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var	ascalabusLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var asclepiusLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var atalantaLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var	bellerophonLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var busirisLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var	cadmusLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var callistoLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var cecropsLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var coronisLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var cycnusLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var cyparissusLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var cyreneLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var danaeLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var deucalionLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var diomedesLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var endymionLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var erysicthonLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var eryxLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var europaLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var euadneLayer = L.featureGroup.subGroup(mcg).addTo(map);
 
-			var hippolytaLayer = L.layerGroup();
+			var hippolytaLayer = L.featureGroup.subGroup(mcg).addTo(map);
 
-			var meleagerLayer = L.layerGroup();
-			var midasLayer = L.layerGroup();
+			var meleagerLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var midasLayer = L.featureGroup.subGroup(mcg).addTo(map);
 
-			var narcissusLayer = L.layerGroup();
+			var narcissusLayer = L.featureGroup.subGroup(mcg).addTo(map);
 
-			var pasiphaeLayer = L.layerGroup();
-			var pelopsLayer = L.layerGroup();
+			var pasiphaeLayer = L.featureGroup.subGroup(mcg).addTo(map);
+			var pelopsLayer = L.featureGroup.subGroup(mcg).addTo(map);
 
 
 			//create base data layer and filter data
@@ -228,14 +243,12 @@ NEXT STEPS:
 			L.easyButton('<i class="material-icons">info_outline</i>', function(btn, map){
 				infoPopup.setLatLng(map.getCenter()).openOn(map);
 			}).addTo(map);
-			
+	
 			//initialize layer contorl
 			var layerControl = L.control.layers(null, overlayMaps, {position: "topleft"}).addTo(map);
-			
+
 		});
 		
-		
-
 	</script>
 
 </body>

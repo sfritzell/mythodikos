@@ -219,9 +219,6 @@ NEXT STEPS:
 				"Pelops": pelopsLayer
 			};
 
-			//initialize layer contorl
-			var layerControl = L.control.layers(null, overlayMaps).addTo(map);
-
 			//create info popup style and contents
 			var infoPopup = L.popup({width: window.innerWidth, maxHeight: 600}).setContent(
 				"<p><b>Mythodikos: Digital Visualization of Mythical People & Places</b></p><p>The Mythodikos project, Ancient Greek for 'connected to myth', is intended to allow a student or scholar to consider mythological figures not just as they are associated with particular texts, authors, and traditions of writing, but also as they are connected to various geographical spaces.</p><hr><p>To use the Mythodikos map interface, begin typing the name of a mythical figure into the search tool.  A list of suggested reults will appear.  If your search term is not currently available in the database, a 'Name not found' message will appear.  For each search, the map will display the geographic point(s) associated with the search term.  Hover over a point to display a popup containing the place name, associated Pleiades ID number, and a list of citations supporting the person-place connection called by the search.</p><hr><p>Data for the Mythodikos project has been generated from the Perseus Digital Library Greek corpus using a text-mining tool built in Python. Geographic data and coordinates are provided by Pleiades (https://pleiades.stoa.org). The Mythodikos project has been developed by Stella Fritzell (PhD Candidate at Bryn Mawr College) in consultation with Radcliffe Edmonds, Alice McGrath, and Alicia Peaker.</p><p>Planned future work includes:<br><p><ul><li>accurate display of popup data within search results</li><li>adaptation of search tool to allow multiple results</li><li>expansion of people and places represented in dataset</li><li>eventual inclusion of Latin literature in data collection</li></ul></p>"
@@ -231,7 +228,10 @@ NEXT STEPS:
 			L.easyButton('<i class="material-icons">info_outline</i>', function(btn, map){
 				infoPopup.setLatLng(map.getCenter()).openOn(map);
 			}).addTo(map);
-	
+			
+			//initialize layer contorl
+			var layerControl = L.control.layers(null, overlayMaps, {position: "topleft"}).addTo(map);
+			
 		});
 		
 		

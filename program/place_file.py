@@ -6,9 +6,6 @@ Python dictionary object for Mythodikos project; Latinized place names and varie
 
 * compiled in reference to filtered Pleiades data, TLG lemma search for varient Greek spellings
 
-* make into a dictionary of dictionaries to allow for pleiades info (# and coordinates) to be included and then easily appended to search results
-e.g. {'Arcadia': {'spellings': [], 'pleiades id': , 'coordinates': []}}
-
 @author: sfritzell
 '''
 
@@ -55,13 +52,37 @@ placedict = {
 		'pleiades id': '550696',
 		'coordinates': [26.250159394099608, 39.16901707159906]
 	},
-	#'Lycaeus': [r''],
-	#'Mainalos': [r''],
-	#'Methymna': [r''],
-	#'Parthenion': [r''],
-	#'Taenarum': [r''],
-	#'Tarentum': [r''],
-	#'Tegea': [r''],
+	'Mainalos': 
+	{
+		'spellings': [r'\bΜαίναλο', r'\bΜαινάλο', r'\bΜαινάλῳ', r'\bΜαινάλι', r'\bΜαιναλί'],
+		'pleiades id': '570451',
+		'coordinates': [22.265891, 37.549491]
+	},
+	'Methymna':
+	{
+		'spellings': [r'\bΜήθυ', r'\bΜηθύ', r'\bΜεθυμ', r'\bΜίθυ', r'\bΜιθύ'],
+		'pleiades id': '550738',
+		'coordinates': [26.176890999999998, 39.369167000000004]
+	},
+	#'Parthenion': [r''], #two possible locations in Pleiades
+	'Tainaron': 
+	{
+		'spellings': [r'\bΤαίναρο', r'\bΤαινάρο', r'\bΤαινάρῳ', r'\bΤαινάρω', r'\bΤαινάρι', r'\bΤαιναρί'],
+		'pleiades id': '570702',
+		'coordinates': [22.48650368203568, 36.401358569665966]
+	},
+	'Tarentum': 
+	{
+		'spellings': [r'\bΤάρας', r'\bΤάραντα', r'\bΤάραντι', r'\bΤάραντο', r'\bΤαράντ', r'\bΤέρεντο', r'\bΤερέντο', r'\bΤερεντό'],
+		'pleiades id': '442810',
+		'coordinates': [17.2330416, 40.4737866]
+	},
+	'Tegea': 
+	{
+		'spellings': [r'\bΤεγέα', r'\bΤέγεα', r'\bΤεγέᾳ', r'\bΤεγέη', r'\bΤεγέῃ'],
+		'pleiades id': '570707',
+		'coordinates': [22.420672, 37.455301]
+	},
 	'Thebes': 
 	{
 		'spellings': [r'\bΘήβ', r'\bΘῆβ'],

@@ -38,8 +38,8 @@ NEXT STEPS:
 	<!--this is a reference to the marker cluster default style sheet-->
 	<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
 
-	<!--this is a reference to the easybutton CSS file-->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+	<!--this is a reference to the sidebar style sheet-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Turbo87/sidebar-v2@v0.4.0/css/leaflet-sidebar.css">
 
 	<!--this is a link to use google icons-->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -67,8 +67,8 @@ NEXT STEPS:
 	<!--this is a reference to the FeatureGroup.SubGroup plugin to work with clustering-->
 	<script src="https://unpkg.com/leaflet.featuregroup.subgroup@1.0.2/dist/leaflet.featuregroup.subgroup.js"></script>
 
-	<!--this is a reference to the easybutton JavaScript-->
-	<script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+	<!--this is a reference to the sidebar JavaScript-->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Turbo87/sidebar-v2@v0.4.0/js/leaflet-sidebar.js"></script>
 
 	<!--CSS for fullscreen #map-->
 	<style type="text/css">
@@ -81,6 +81,7 @@ NEXT STEPS:
 		html, body, #map {
 			height: 100vh;
 			width: 100vw;
+			font:  10pt "Helvetica Neue", Arial, Helvetica, sans-serif;
 		}
 
 	</style>
@@ -89,7 +90,97 @@ NEXT STEPS:
 
 <body>
 	
-	<div id="map"></div>
+	<!--define sidebar-->
+	<div id="sidebar" class="sidebar collapsed">
+		
+		<!--navigation tabs-->
+		<div class="sidebar-tabs">
+			<ul role="tablist">
+				<li><a href="#info" role="tab">
+					<i class="material-icons">info_outline</i>
+				</a></li>
+				<li><a href="#credits" role="tab">
+					<i class="material-icons">person_outline</i>
+				</a></li>
+				<li><a href="#contact" role="tab">
+					<i class="material-icons">mail_outline</i>
+				</a></li>
+				<li><a href="#downloads" role="tab">
+					<i class="material-icons">file_download</i>
+				</a></li>
+		</div>
+
+		<!--tab panes & content-->
+		<div class="sidebar-content">
+			<div class="sidebar-pane" id="info">
+				<h1 class="sidebar-header">
+					About
+					<span class="sidebar-close">
+						<i class="material-icons">keyboard_arrow_left</i>
+					</span>
+				</h1>
+				<h3>Mythodikos: Digital Visualization of Mythical People & Places</h3>
+				<p>
+					The Mythodikos project, Ancient Greek for 'connected to myth', is intended to allow an individual to consider mythological figures not just as they are associated with particular texts, authors, and traditions of writing, but also as they are connected to various geographical spaces.
+				</p>
+				<h4>How-To</h4>
+				<p>
+					To use, open the layer control on the right side of the screen and toggle the name of one or more mythical figures.  The map will display any points in the dataset associated with the selected figures.  Click on a point marker to open a popup containing the place name, associated Pleiades ID number, and a list of textual citations supporting the person-place connection.
+				</p>
+				<h4>Data</h4>
+				<p>
+					Data for the Mythodikos project has been complied from the <a href="http://www.perseus.tufts.edu/hopper/">Perseus Digital Library</a> Greek corpus using a text-mining tool built in Python.  Geographic coordinates are taken from <a href="https://pleiades.stoa.org">Pleiades</a>.
+				</p>
+			</div>
+
+			<div class="sidebar-pane" id="credits">
+				<h1 class="sidebar-header">
+					Credits
+					<span class="sidebar-close">
+						<i class="material-icons">keyboard_arrow_left</i>
+					</span>
+				</h1>
+				<p>
+					The Mythodikos project is supported by the Department of Greek, Latin, & Classical Studies and the Library & Information Technology Services (LITS) program in Digital Scholarship at Bryn Mawr College.
+				</p>
+				<h3>Project Team</h3>
+				<p><b>Stella Fritzell</b> (Project Lead)</p>
+				<p><b>Radcliffe Edmonds</b> (Consultant)</p>
+				<p><b>Alice McGrath</b> (Consultant)</p>
+				<p><b>Alicia Peaker</b> (Consultant)</p>
+				<hr>
+				<h3>Additional Thanks</h3>
+				<p>Sean Keenan</p>
+				<p>Brian Cole</p>
+			</div>
+
+			<div class="sidebar-pane" id="contact">
+				<h1 class="sidebar-header">
+					Contact
+					<span class="sidebar-close">
+						<i class="material-icons">keyboard_arrow_left</i>
+					</span>
+				</h1>
+				<p>Placeholder for contact form.</p>
+			</div>
+
+			<div class="sidebar-pane" id="downloads">
+				<h1 class="sidebar-header">
+					Downloads
+					<span class="sidebar-close">
+						<i class="material-icons">keyboard_arrow_left</i>
+					</span>
+				</h1>
+				<p>
+					The source code and dataset (geoJSON format) for the Mythodikos project may be accessed through its <a href="https://github.com/sfritzell/mythodikos">GitHub repository</a>. 
+				</p>
+			</div>
+		</div>
+
+	</div>
+
+	<!--define map-->
+	<div id="map" class="sidebar-map"></div>
 	
 	<!--JavaScript to build map-->
 	<script type="text/javascript"> //type specificaiton not necessary, JavaScript = default html script
@@ -107,7 +198,7 @@ NEXT STEPS:
 		$.when(data).done(function() {
 
 			//initialize map
-			var map = L.map("map", {scrollWheelZoom:true}).setView([39.60071, 22.29807], 5);
+			var map = L.map("map", {zoomControl: false, scrollWheelZoom:true}).setView([39.60071, 22.29807], 5);
 
 			//load tile layer
 			L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
@@ -247,18 +338,14 @@ NEXT STEPS:
 				"Pelops": pelopsLayer
 			};
 
-			//create info popup style and contents
-			var infoPopup = L.popup({width: window.innerWidth, maxHeight: 600}).setContent(
-				"<p><b>Mythodikos: Digital Visualization of Mythical People & Places</b></p><p>The Mythodikos project, Ancient Greek for 'connected to myth', is intended to allow a student or scholar to consider mythological figures not just as they are associated with particular texts, authors, and traditions of writing, but also as they are connected to various geographical spaces.</p><hr><p>To use the Mythodikos map interface, begin typing the name of a mythical figure into the search tool.  A list of suggested reults will appear.  If your search term is not currently available in the database, a 'Name not found' message will appear.  For each search, the map will display the geographic point(s) associated with the search term.  Hover over a point to display a popup containing the place name, associated Pleiades ID number, and a list of citations supporting the person-place connection called by the search.</p><hr><p>Data for the Mythodikos project has been generated from the Perseus Digital Library Greek corpus using a text-mining tool built in Python. Geographic data and coordinates are provided by Pleiades (https://pleiades.stoa.org). The Mythodikos project has been developed by Stella Fritzell (PhD Candidate at Bryn Mawr College) in consultation with Radcliffe Edmonds, Alice McGrath, and Alicia Peaker.</p><p>Planned future work includes:<br><p><ul><li>accurate display of popup data within search results</li><li>adaptation of search tool to allow multiple results</li><li>expansion of people and places represented in dataset</li><li>eventual inclusion of Latin literature in data collection</li></ul></p>"
-				);
+			//initialize sidebar
+			var sidebar = L.control.sidebar("sidebar").addTo(map);
 
-			//define info popup button and load to map
-			L.easyButton('<i class="material-icons">info_outline</i>', function(btn, map){
-				infoPopup.setLatLng(map.getCenter()).openOn(map);
-			}).addTo(map);
-	
+			//initialize zoom control
+			var zoomControl = L.control.zoom({position: "topright"}).addTo(map);
+
 			//initialize layer contorl
-			var layerControl = L.control.layers(null, overlayMaps, {position: "topleft"}).addTo(map);
+			var layerControl = L.control.layers(null, overlayMaps, {position: "topright"}).addTo(map);
 
 		});
 		

@@ -3,8 +3,8 @@ This is html for displaying the Mythodikos webmap
 Adapted from MOLeaflet.html
 
 NEXT STEPS:
-1. update info/about popup
-2. assign unique colors to each layer
+1. assign unique colors to each layer
+2. add script to remove empty layers (if a person layer doesn't have any data)
 3. streamline creation of filtered data layers
 (4. allow citation of Greek text)
 -->
@@ -81,6 +81,7 @@ NEXT STEPS:
 		html, body, #map {
 			height: 100vh;
 			width: 100vw;
+			margin: auto;
 			font:  10pt "Helvetica Neue", Arial, Helvetica, sans-serif;
 		}
 
@@ -119,15 +120,15 @@ NEXT STEPS:
 						<i class="material-icons">keyboard_arrow_left</i>
 					</span>
 				</h1>
-				<h3>Mythodikos: Digital Visualization of Mythical People & Places</h3>
+				<h2>Mythodikos: Digital Visualization of Mythical People & Places</h2>
 				<p>
 					The Mythodikos project, Ancient Greek for 'connected to myth', is intended to allow an individual to consider mythological figures not just as they are associated with particular texts, authors, and traditions of writing, but also as they are connected to various geographical spaces.
 				</p>
-				<h4>How-To</h4>
+				<h3>How-To</h3>
 				<p>
 					To use, open the layer control on the right side of the screen and toggle the name of one or more mythical figures.  The map will display any points in the dataset associated with the selected figures.  Click on a point marker to open a popup containing the place name, associated Pleiades ID number, and a list of textual citations supporting the person-place connection.
 				</p>
-				<h4>Data</h4>
+				<h3>Data</h3>
 				<p>
 					Data for the Mythodikos project has been complied from the <a href="http://www.perseus.tufts.edu/hopper/">Perseus Digital Library</a> Greek corpus using a text-mining tool built in Python.  Geographic coordinates are taken from <a href="https://pleiades.stoa.org">Pleiades</a>.
 				</p>

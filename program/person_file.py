@@ -6,6 +6,10 @@ Python dictionary object for Mythodikos project; Latinized person names and vari
 
 * compiled in reference to https://www.theoi.com/greek-mythology/heroes.html ; eventually LIMC
 
+Next Steps:
+1. Separate / combine individual names with group identities (i.e. Azeios & Hoplodamos under Giants)
+2. Address case sensitivity; group names should allow for lowercase, individual names should remain uppercase
+
 @author: sfritzell
 '''
 
@@ -13,19 +17,23 @@ persondict = {
 'Achilles': [r'\bἈχιλλε', r'\bἈχιλλέ', r'\bἈχιλε', r'\bἈχιλέ'], #may be getting some false results, double check regex
 'Actaeon': [r'\bἈκταίων', r'\bἈκταίον'],
 'Adonis': [r'Ἄδωνις', r'Ἄδωνιν', r'\bἈδώνιδ', r'\bἈδωνίδ'], #overlap with festival / month names
+#'Amazons': [r'\b'],
 'Amymone': [r'\bἈμυμώνη', r'\bἈμυμώνῃ', r'\bἈμυμώνα', r'\bἈμυμῶνα', r'\bἈμυμόνη'], #also the name of a river
 'Andromeda': [r'\bἈνδρομέδα', r'\bἈνδρομέδᾳ', r'\bἈνδρομέδη', r'\bἈνδρομέδῃ'],
 'Antiope': [r'\bἈντιόπ'],
+'Anytos': [r'\bἌνυτε', r'\bἌνυτο', r'\bἈνύτο', r'\bἈνύτῳ'],
 'Arachne': [r'\bἈράχνη', r'\bἈράχνῃ'],
 'Arion': [r'\bἈρίων', r'\bἈρίον'], #also the name of a horse
 'Ascalabus': [r'\bἈσκάλαβο'],
 'Asclepius': [r'\bἈσκληπιό', r'\bἈσκληπιο', r'\bἈσκλήπιο', r'Ἀσκληπιέ', r'\bἈσκλαπ'],
 'Atalanta': [r'\bἈταλάντ'],
+'Azeios': [r'\bἈζειό', r'\bἈζειο'],
 'Bellerophon': [r'\bΒελλερεφόντα', r'\bΒελλεροφόντα', r'\bΒελερόφοντα', r'\bΒελλερεφόντη', '\bΒελλερεφόντῃ', r'\bΒελλεροφόντῃ', r'\bΒελλεροφόντη', r'\bΒελεροφόντη', r'\bΒελλεροφόντο', r'\bΒελλερόφοντο', r'\bΒελερόφοντο', r'\bΒελεροφόντο', r'\bΒελλεροφώ', r'\bΒελλεροφῶ'],
 'Busiris': [r'\bΒούσιρι', r'\bΒουσίριδ'],
 'Cadmus': [r'Κάδμε', r'\bΚάδμοι', r'\bΚάδμον', r'\bΚάδμος', r'\bΚάδμου', r'\bΚάδμω', r'\bΚάδμῳ'],
 'Callisto': [r'\bΚαλλιστώ', r'Καλλιστῆς', r'Καλλιστοῖ', r'Καλλιστοῦς'],
 'Cecrops': [r'\bΚέκροψ', r'\bΚέκρωψ', r'\bΚέκροπο', r'\bΚέκροπα', r'\bΚέκροπε', r'\bΚεκρόπε', r'Κέκροπι'],
+#'Choreia': [r'\b'],
 'Coronis': [r'Κορωνίς', r'\bΚορωνίδα', r'\bΚορωνίδο', r'\bΚορωνίδι'], #there are multiple Coronises
 'Cycnus': [r'\bΚύκνο', r'\bΚύκνῳ', r'\bΚύκνω', r'Κύκνε'], #there are multiple Cycnuses, typically identified by toponym --> seperation will occur in search/data collection
 'Cyparissus': [r'\bΚυπάρισσο', r'\bΚυπαρίσσο', r'\bΚυπαρισσο', r'\bΚυπάριτ', r'\bΚυπαρίτ'], #also a city name
@@ -40,8 +48,10 @@ persondict = {
 'Euadne': [r'\bΕὐάδν'], #there are multiple Euadnes
 #'Ganymede': [r'\b'],
 #'Geryon': [r'\b'],
+'Giants': [r'\bΓίγας', r'\bΓίγασ', r'\bΓίγαν', r'\bΓιγάν'],
 #'Heracles': [r'\b'],
 'Hippolyta': [r'\bἹππολύτα', r'\bἹππολύτη'],
+'Hoplodamos': [r'\bὉπλάδ', r'\bὉπλαδ', r'\bὉπλόδ', r'\bὉπλοδ'],
 #'Hyacinthus': [r'\b'],
 #'Iamus': [r'\b'],
 #'Iasion': [r'\b'],
@@ -52,6 +62,7 @@ persondict = {
 #'Leda': [r'\b'],
 #'Lycaon': [r'\b'],
 #'Lycurgus': [r'\b'],
+#'Maenads': [r'\b'],
 'Meleager': [r'\bΜελέαγρ', r'\bΜελεάγρ'], #may be getting some false results, overlap with festival name
 'Midas': [r'\bΜίδα', r'\bΜίδᾳ', r'\bΜίδη', r'Μίδου', r'Μίδῃ', r'Μίδεω', r'\bΜῖδα'],
 #'Minyades': [r'\b'], #a trio of princesses
@@ -63,6 +74,7 @@ persondict = {
 #'Otrera': [r'\b'],
 #'Pandora': [r'\b'],
 'Pasiphae': [r'\bΠασιφάη', r'\bΠασιφάῃ', r'\bΠασιφάα'],
+#'Pelasgos': [r'\b'],
 'Pelops': [r'\bΠέλο'], #accent should limit results in regex
 #'Penthesilea': [r'\b'],
 #'Perseus': [r'\b'],

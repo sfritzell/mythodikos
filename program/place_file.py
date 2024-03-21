@@ -6,16 +6,45 @@ Python dictionary object for Mythodikos project; Latinized place names and varie
 
 * compiled in reference to filtered Pleiades data, TLG lemma search for varient Greek spellings
 
+Next Steps:
+1. Add group / ethinic names where appropriate; i.e. Argives under Argos
+
 @author: sfritzell
 '''
 
 placedict = {
+	#'Abae':
+	#'Abantis': #Ancient name for Euboea
+	#'Abdera':
+	#'Abia':
+	#'Abydon': #Also Amydon
+	#'Acacesium':
+	#'Academia':
+	#'Acarnania':
+	#'Acesa': #Also Lemnos
+	#'Achaia': #Two, 1.) Aegialus province in the Peloponnese, 2.) south of Thessaly
+	#'Achaarnae':
+	#'Achelous': #rivers?
+	'Argolis': 
+	{
+		'spellings': [r'\bἈργολί', r'\bἈργόλι', r'\bἈργολι'],
+		'pleiades id': '570104',
+		'coordinates': [22.962079770375375, 37.62145180121853]
+	},
+	'Argos':
+	{
+		'spellings': [r'\bἌργος', r'\bἌργου', r'\bἌργει'],
+		'pleiades id': '491527',
+		'coordinates': [22.719464, 37.631561]
+	},
 	'Arcadia': 
 	{
 		'spellings': [r'\bἈρκαδ', r'\bἈρκάδ'],
 		'pleiades id': '570102',
 		'coordinates': [22.170246015828386, 37.61817012463577]
 	},
+	#'Athens': ,
+	#'Attica': ,
 	'Boeotia': 
 	{
 		'spellings': [r'\bΒοιωτ', r'\bΒοιῳτ', r'\bΒοϊωτ', r'\bΒοέκ', r'\bΒοεκ'],
@@ -58,6 +87,12 @@ placedict = {
 		'pleiades id': '570451',
 		'coordinates': [22.265891, 37.549491]
 	},
+	'Megalopolis': 
+	{
+		'spellings': [r'\bΜεγαλόπολ', r'\bΜεγαλοπόλ', r'\bΜεγαλῃπόλ', r'\bμεγαλόπολ', r'\bμεγαλοπόλ', r'\bμεγαλῃπόλ', r'\bΜεγαλοπολ', r'\bμεγαλοπολ'],
+		'pleiades id': '570467',
+		'coordinates': [22.1273485, 37.412417500000004]
+	},
 	'Methymna':
 	{
 		'spellings': [r'\bΜήθυ', r'\bΜηθύ', r'\bΜεθυμ', r'\bΜίθυ', r'\bΜιθύ'],
@@ -88,6 +123,12 @@ placedict = {
 		'spellings': [r'\bΘήβ', r'\bΘῆβ'],
 		'pleiades id': '541138',
 		'coordinates': [23.317577, 38.319156]
+	},
+	'Trapezus':
+	{
+		'spellings': [r'\bΤραπεζόντ', r'\bΤραπεζούντ', r'\bΤραπεζοῦντ', r'\bΤραπεζούς', r'\bΤραπεζοῦς', r'\bΤραπεζῶντ'],
+		'pleiades id': '570746',
+		'coordinates': [22.060685, 37.456281]
 	}
 }
 

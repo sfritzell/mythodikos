@@ -1,0 +1,1567 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.88154529176389,
+                    37.90639977908864
+                ]
+            },
+            "id": "Europa-Corinth",
+            "properties": {
+                "place": "Corinth",
+                "id": "570182",
+                "person": "Europa",
+                "citations": [
+                    " Xenophon, Hellenica book4.chapter3.section15.",
+                    " Diodorus Siculus, Library (Greek). Machine readable text Book11.chapter1.section1.",
+                    " Diodorus Siculus, Library (Greek). Machine readable text Book11.chapter26.section5.",
+                    " Diodorus Siculus, Bibliotheca Historica, Books XVIII-XX book19.chapter87.section1."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.460186899999997,
+                    37.075742175
+                ]
+            },
+            "id": "Europa-Lacedaemon",
+            "properties": {
+                "place": "Lacedaemon",
+                "id": "570406",
+                "person": "Europa",
+                "citations": [
+                    " Xenophon, Hellenica book4.chapter3.section15.",
+                    " Xenophon, Hellenica book4.chapter8.section5.",
+                    " Thucydides, The Peloponnesian War book1.chapter89.section2.",
+                    " Diodorus Siculus, Library (Greek). Machine readable text Book17.chapter48.section1.",
+                    " Diodorus Siculus, Library (Greek). Machine readable text Book17.chapter73.section5.",
+                    " Aristides, Aelius, Orationes 33  .",
+                    " Plutarch, Pericles chapter17.section1.",
+                    " Strabo, Geography book10.chapter4.section9.",
+                    " Strabo, Geography (Greek). Machine readable text Book10.chapter4.section9.",
+                    " Demosthenes, \u03ba\u03b1\u03c4\u1f70 \u1f08\u03c1\u03b9\u03c3\u03c4\u03bf\u03ba\u03c1\u03ac\u03c4\u03bf\u03c5\u03c2 section140."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    26.250159394099608,
+                    39.16901707159906
+                ]
+            },
+            "id": "Achilles-Lesbos",
+            "properties": {
+                "place": "Lesbos",
+                "id": "550696",
+                "person": "Achilles",
+                "citations": [
+                    " Parthenius, Narrationes Amatoriae chapter21.section1.",
+                    " Parthenius, Narrationes Amatoriae chapter26.section3.",
+                    " Philostratus the Lemnian (Philostratus Major), Imagines book2.chapter2.",
+                    " Quintus Smyrnaeus, Fall of Troy book4.l276",
+                    " Strabo, Geography book1.chapter2.section38.",
+                    " Strabo, Geography (Greek). Machine readable text book1.chapter2.section38."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    26.176890999999998,
+                    39.369167000000004
+                ]
+            },
+            "id": "Achilles-Methymna",
+            "properties": {
+                "place": "Methymna",
+                "id": "550738",
+                "person": "Achilles",
+                "citations": [
+                    " Parthenius, Narrationes Amatoriae chapter21.section2."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.188078743333328,
+                    38.34519476333334
+                ]
+            },
+            "id": "Cadmus-Boeotia",
+            "properties": {
+                "place": "Boeotia",
+                "id": "540689",
+                "person": "Cadmus",
+                "citations": [
+                    " Parthenius, Narrationes Amatoriae chapter32.section5.",
+                    " Diodorus Siculus, Bibliotheca Historica, Books I-V book3.chapter64.section3.",
+                    " Diodorus Siculus, Bibliotheca Historica, Books I-V book4.chapter81.section3.",
+                    " Herodotus, The Histories book2.chapter49.section3.",
+                    " Herodotus, The Histories book5.chapter57.section1.",
+                    " Lucian, Dialogi deorum book24.section2.",
+                    " Strabo, Geography book7.chapter7.section1.",
+                    " Strabo, Geography (Greek). Machine readable text Book7.chapter7.section1.",
+                    " Callimachus, Hymn to Athena .",
+                    " Callimachus, Hymn to Athena ."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.460186899999997,
+                    37.075742175
+                ]
+            },
+            "id": "Atalanta-Lacedaemon",
+            "properties": {
+                "place": "Lacedaemon",
+                "id": "570406",
+                "person": "Atalanta",
+                "citations": [
+                    " Thucydides, The Peloponnesian War book5.chapter18.section7."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.1273485,
+                    37.412417500000004
+                ]
+            },
+            "id": "Europa-Megalopolis",
+            "properties": {
+                "place": "Megalopolis",
+                "id": "570467",
+                "person": "Europa",
+                "citations": [
+                    " Diodorus Siculus, Bibliotheca Historica, Books XVIII-XX book18.chapter74.section1."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.420672,
+                    37.455301
+                ]
+            },
+            "id": "Europa-Tegea",
+            "properties": {
+                "place": "Tegea",
+                "id": "570707",
+                "person": "Europa",
+                "citations": [
+                    " Diodorus Siculus, Bibliotheca Historica, Books XVIII-XX book19.chapter35.section1."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.170246015828386,
+                    37.61817012463577
+                ]
+            },
+            "id": "Atalanta-Arcadia",
+            "properties": {
+                "place": "Arcadia",
+                "id": "570102",
+                "person": "Atalanta",
+                "citations": [
+                    " Diodorus Siculus, Bibliotheca Historica, Books I-V book4.chapter34.section4.",
+                    " Pausanias, Description of Greece (Greek). Machine readable text book8.chapter35.section10.",
+                    " Apollodorus, Library  book1.chapter8.section2.",
+                    " Aelian, Varia Historia book13.chapter1."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    39.228819,
+                    38.52585
+                ]
+            },
+            "id": "Atalanta-Colchis",
+            "properties": {
+                "place": "Colchis",
+                "id": "874432",
+                "person": "Atalanta",
+                "citations": [
+                    " Diodorus Siculus, Bibliotheca Historica, Books I-V book4.chapter41.section2."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    21.885071,
+                    41.581351
+                ]
+            },
+            "id": "Atalanta-Argos",
+            "properties": {
+                "place": "Argos",
+                "id": "491527",
+                "person": "Atalanta",
+                "citations": [
+                    " Diodorus Siculus, Bibliotheca Historica, Books I-V book4.chapter65.section4.",
+                    " Apollodorus, Library  book1.chapter9.section16."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.317577,
+                    38.319156
+                ]
+            },
+            "id": "Atalanta-Thebes",
+            "properties": {
+                "place": "Thebes",
+                "id": "541138",
+                "person": "Atalanta",
+                "citations": [
+                    " Diodorus Siculus, Bibliotheca Historica, Books I-V book4.chapter65.section7.",
+                    " Apollodorus, Library  book3.chapter9.section2."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.317577,
+                    38.319156
+                ]
+            },
+            "id": "Busiris-Thebes",
+            "properties": {
+                "place": "Thebes",
+                "id": "541138",
+                "person": "Busiris",
+                "citations": [
+                    " Diodorus Siculus, Bibliotheca Historica, Books I-V book1.chapter45.section4."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.317577,
+                    38.319156
+                ]
+            },
+            "id": "Cadmus-Thebes",
+            "properties": {
+                "place": "Thebes",
+                "id": "541138",
+                "person": "Cadmus",
+                "citations": [
+                    " Diodorus Siculus, Bibliotheca Historica, Books I-V book3.chapter64.section3.",
+                    " Diodorus Siculus, Bibliotheca Historica, Books I-V book4.chapter66.section3.",
+                    " Pausanias, Description of Greece (Greek). Machine readable text book9.chapter19.section4.",
+                    " Pausanias, Description of Greece (Greek). Machine readable text book10.chapter17.section4.",
+                    " Philostratus the Lemnian (Philostratus Major), Imagines book1.chapter13.",
+                    " Philostratus the Lemnian (Philostratus Major), Imagines book1.chapter17.",
+                    " Apollodorus, Library  book1.chapter9.section23.",
+                    " Apollodorus, Library  book3.chapter5.section4.",
+                    " Bacchylides, Odes (Greek) - Dith .",
+                    " Arrian, Anabasis book2.chapter16.section1.",
+                    " Arrian, Anabasis book2.chapter16.section1.",
+                    " , Greek Anthology, Volume III book9.chapter253.l1",
+                    " Apollonius Rhodius, Argonautica book3.l1179",
+                    " Euripides, Phoenissae .l5",
+                    " Nonnus of Panopolis, Dionysiaca book44.l200",
+                    " Nonnus of Panopolis, Dionysiaca book5.l50"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    26.250159394099608,
+                    39.16901707159906
+                ]
+            },
+            "id": "Deucalion-Lesbos",
+            "properties": {
+                "place": "Lesbos",
+                "id": "550696",
+                "person": "Deucalion",
+                "citations": [
+                    " Diodorus Siculus, Bibliotheca Historica, Books I-V book5.chapter81.section3."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    39.228819,
+                    38.52585
+                ]
+            },
+            "id": "Europa-Colchis",
+            "properties": {
+                "place": "Colchis",
+                "id": "874432",
+                "person": "Europa",
+                "citations": [
+                    " Diodorus Siculus, Bibliotheca Historica, Books I-V book4.chapter47.section1."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.170246015828386,
+                    37.61817012463577
+                ]
+            },
+            "id": "Meleager-Arcadia",
+            "properties": {
+                "place": "Arcadia",
+                "id": "570102",
+                "person": "Meleager",
+                "citations": [
+                    " Diodorus Siculus, Bibliotheca Historica, Books I-V book4.chapter34.section4."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.188078743333328,
+                    38.34519476333334
+                ]
+            },
+            "id": "Antiope-Boeotia",
+            "properties": {
+                "place": "Boeotia",
+                "id": "540689",
+                "person": "Antiope",
+                "citations": [
+                    " Harpocration, Valerius, Lexicon in decem oratores Atticos letteru.entryhusiai."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.460186899999997,
+                    37.075742175
+                ]
+            },
+            "id": "Busiris-Lacedaemon",
+            "properties": {
+                "place": "Lacedaemon",
+                "id": "570406",
+                "person": "Busiris",
+                "citations": [
+                    " Harpocration, Valerius, Lexicon in decem oratores Atticos letterk.entrygnomes_apodemein."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.962079770375375,
+                    37.62145180121853
+                ]
+            },
+            "id": "Pelops-Argolis",
+            "properties": {
+                "place": "Argolis",
+                "id": "570104",
+                "person": "Pelops",
+                "citations": [
+                    " Philostratus the Athenian, Vita Apollonii book3.chapter31.",
+                    " Pausanias, Description of Greece (Greek). Machine readable text book6.chapter20.section7."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.170246015828386,
+                    37.61817012463577
+                ]
+            },
+            "id": "Pelops-Arcadia",
+            "properties": {
+                "place": "Arcadia",
+                "id": "570102",
+                "person": "Pelops",
+                "citations": [
+                    " Philostratus the Athenian, Vita Apollonii book3.chapter31.",
+                    " Apollodorus, Library  book3.chapter12.section6.",
+                    " Apollodorus, Library  book3.chapter12.section6."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.188078743333328,
+                    38.34519476333334
+                ]
+            },
+            "id": "Pelops-Boeotia",
+            "properties": {
+                "place": "Boeotia",
+                "id": "540689",
+                "person": "Pelops",
+                "citations": [
+                    " Philostratus the Athenian, Epistulae et dialexeis book1.chapter47.",
+                    " Strabo, Geography book8.chapter4.section4.",
+                    " Strabo, Geography (Greek). Machine readable text Book8.chapter4.section4."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.88154529176389,
+                    37.90639977908864
+                ]
+            },
+            "id": "Pelops-Corinth",
+            "properties": {
+                "place": "Corinth",
+                "id": "570182",
+                "person": "Pelops",
+                "citations": [
+                    " Philostratus the Athenian, Epistulae et dialexeis book1.chapter47.",
+                    " Apollodorus, Epitome  chapter1.section2."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.170246015828386,
+                    37.61817012463577
+                ]
+            },
+            "id": "Achilles-Arcadia",
+            "properties": {
+                "place": "Arcadia",
+                "id": "570102",
+                "person": "Achilles",
+                "citations": [
+                    " Philostratus the Athenian, Heroicus .",
+                    " Philostratus the Athenian, Heroicus .",
+                    " Pausanias, Description of Greece (Greek). Machine readable text book3.chapter20.section8."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    26.250159394099608,
+                    39.16901707159906
+                ]
+            },
+            "id": "Diomedes-Lesbos",
+            "properties": {
+                "place": "Lesbos",
+                "id": "550696",
+                "person": "Diomedes",
+                "citations": [
+                    " Philostratus the Athenian, Heroicus ."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.48650368203568,
+                    36.401358569665966
+                ]
+            },
+            "id": "Europa-Tainaron",
+            "properties": {
+                "place": "Tainaron",
+                "id": "570702",
+                "person": "Europa",
+                "citations": [
+                    " Pindar, Odes (Greek). Machine readable text - P. poem4.l46"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.188078743333328,
+                    38.34519476333334
+                ]
+            },
+            "id": "Actaeon-Boeotia",
+            "properties": {
+                "place": "Boeotia",
+                "id": "540689",
+                "person": "Actaeon",
+                "citations": [
+                    " Pausanias, Description of Greece (Greek). Machine readable text book10.chapter17.section3."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.962079770375375,
+                    37.62145180121853
+                ]
+            },
+            "id": "Amymone-Argolis",
+            "properties": {
+                "place": "Argolis",
+                "id": "570104",
+                "person": "Amymone",
+                "citations": [
+                    " Pausanias, Description of Greece (Greek). Machine readable text book4.chapter35.section2."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.170246015828386,
+                    37.61817012463577
+                ]
+            },
+            "id": "Anytos-Arcadia",
+            "properties": {
+                "place": "Arcadia",
+                "id": "570102",
+                "person": "Anytos",
+                "citations": [
+                    " Pausanias, Description of Greece (Greek). Machine readable text book8.chapter37.section6."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.48650368203568,
+                    36.401358569665966
+                ]
+            },
+            "id": "Arion-Tainaron",
+            "properties": {
+                "place": "Tainaron",
+                "id": "570702",
+                "person": "Arion",
+                "citations": [
+                    " Pausanias, Description of Greece (Greek). Machine readable text book3.chapter25.section7.",
+                    " Philostratus the Lemnian (Philostratus Major), Imagines book1.chapter18.",
+                    " Herodotus, The Histories book1.chapter23.section1.",
+                    " Herodotus, The Histories book1.chapter24.section8.",
+                    " Dio Chrysostom, Orationes speech20.section4.",
+                    " Strabo, Geography book13.chapter2.section4.",
+                    " Strabo, Geography (Greek). Machine readable text Book13.chapter2.section4.",
+                    " Aelian, De Natura Animalium book12.chapter45."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.460186899999997,
+                    37.075742175
+                ]
+            },
+            "id": "Asclepius-Lacedaemon",
+            "properties": {
+                "place": "Lacedaemon",
+                "id": "570406",
+                "person": "Asclepius",
+                "citations": [
+                    " Pausanias, Description of Greece (Greek). Machine readable text book3.chapter20.section5."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.1273485,
+                    37.412417500000004
+                ]
+            },
+            "id": "Asclepius-Megalopolis",
+            "properties": {
+                "place": "Megalopolis",
+                "id": "570467",
+                "person": "Asclepius",
+                "citations": [
+                    " Pausanias, Description of Greece (Greek). Machine readable text book5.chapter7.section1."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    21.533182500000002,
+                    38.372926
+                ]
+            },
+            "id": "Atalanta-Calydon",
+            "properties": {
+                "place": "Calydon",
+                "id": "540699",
+                "person": "Atalanta",
+                "citations": [
+                    " Pausanias, Description of Greece (Greek). Machine readable text book8.chapter45.section2."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.88154529176389,
+                    37.90639977908864
+                ]
+            },
+            "id": "Bellerophon-Corinth",
+            "properties": {
+                "place": "Corinth",
+                "id": "570182",
+                "person": "Bellerophon",
+                "citations": [
+                    " Pausanias, Description of Greece (Greek). Machine readable text book2.chapter31.section9.",
+                    " Pausanias, Description of Greece (Greek). Machine readable text book2.chapter4.section2.",
+                    " Aristides, Aelius, Orationes 3  .",
+                    " Lucian, Apologia section3.",
+                    " Lucian, De saltatione section42."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    21.885071,
+                    41.581351
+                ]
+            },
+            "id": "Bellerophon-Argos",
+            "properties": {
+                "place": "Argos",
+                "id": "491527",
+                "person": "Bellerophon",
+                "citations": [
+                    " Pausanias, Description of Greece (Greek). Machine readable text book2.chapter4.section2."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.460186899999997,
+                    37.075742175
+                ]
+            },
+            "id": "Cadmus-Lacedaemon",
+            "properties": {
+                "place": "Lacedaemon",
+                "id": "570406",
+                "person": "Cadmus",
+                "citations": [
+                    " Pausanias, Description of Greece (Greek). Machine readable text book4.chapter7.section8."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.460186899999997,
+                    37.075742175
+                ]
+            },
+            "id": "Callisto-Lacedaemon",
+            "properties": {
+                "place": "Lacedaemon",
+                "id": "570406",
+                "person": "Callisto",
+                "citations": [
+                    " Pausanias, Description of Greece (Greek). Machine readable text book10.chapter9.section5."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.170246015828386,
+                    37.61817012463577
+                ]
+            },
+            "id": "Callisto-Arcadia",
+            "properties": {
+                "place": "Arcadia",
+                "id": "570102",
+                "person": "Callisto",
+                "citations": [
+                    " Pausanias, Description of Greece (Greek). Machine readable text book10.chapter9.section6.",
+                    " Pausanias, Description of Greece (Greek). Machine readable text book8.chapter3.section7.",
+                    " Pausanias, Description of Greece (Greek). Machine readable text book8.chapter9.section3.",
+                    " Pausanias, Description of Greece (Greek). Machine readable text book8.chapter36.section8.",
+                    " Pausanias, Description of Greece (Greek). Machine readable text book8.chapter37.section11.",
+                    " Apollodorus, Library  book3.chapter8.section2.",
+                    " Apollodorus, Library  book3.chapter8.section2.",
+                    " Lucian, De saltatione section48.",
+                    " Euripides, Helen .l375",
+                    " Nonnus of Panopolis, Dionysiaca book36.l71"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.317577,
+                    38.319156
+                ]
+            },
+            "id": "Diomedes-Thebes",
+            "properties": {
+                "place": "Thebes",
+                "id": "541138",
+                "person": "Diomedes",
+                "citations": [
+                    " Pausanias, Description of Greece (Greek). Machine readable text book2.chapter20.section5.",
+                    " Strabo, Geography book7.chapter7.section7.",
+                    " Strabo, Geography (Greek). Machine readable text Book7.chapter7.section7."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    21.885071,
+                    41.581351
+                ]
+            },
+            "id": "Diomedes-Argos",
+            "properties": {
+                "place": "Argos",
+                "id": "491527",
+                "person": "Diomedes",
+                "citations": [
+                    " Pausanias, Description of Greece (Greek). Machine readable text book2.chapter25.section2.",
+                    " Apollodorus, Library  book1.chapter8.section5.",
+                    " Apollodorus, Library  book1.chapter8.section6.",
+                    " Apollodorus, Library  book1.chapter8.section6.",
+                    " Procopius, de Bellis book5.chapter15.section8.",
+                    " Dio Chrysostom, Orationes speech11.section143.",
+                    " Strabo, Geography book7.chapter7.section7.",
+                    " Strabo, Geography book5.chapter1.section9.",
+                    " Strabo, Geography (Greek). Machine readable text Book7.chapter7.section7.",
+                    " Strabo, Geography (Greek). Machine readable text book5.chapter1.section9.",
+                    " Appian, Syrian Wars  chapter10.section63."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.170246015828386,
+                    37.61817012463577
+                ]
+            },
+            "id": "Diomedes-Arcadia",
+            "properties": {
+                "place": "Arcadia",
+                "id": "570102",
+                "person": "Diomedes",
+                "citations": [
+                    " Pausanias, Description of Greece (Greek). Machine readable text book5.chapter10.section9.",
+                    " Philostratus the Lemnian (Philostratus Major), Imagines book1.chapter16."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    21.533182500000002,
+                    38.372926
+                ]
+            },
+            "id": "Meleager-Calydon",
+            "properties": {
+                "place": "Calydon",
+                "id": "540699",
+                "person": "Meleager",
+                "citations": [
+                    " Pausanias, Description of Greece (Greek). Machine readable text book8.chapter4.section10.",
+                    " Apollonius Rhodius, Argonautica book1.l191"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.317577,
+                    38.319156
+                ]
+            },
+            "id": "Cycnus-Thebes",
+            "properties": {
+                "place": "Thebes",
+                "id": "541138",
+                "person": "Cycnus",
+                "citations": [
+                    " Quintus Smyrnaeus, Fall of Troy book4.l153"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    21.885071,
+                    41.581351
+                ]
+            },
+            "id": "Andromeda-Argos",
+            "properties": {
+                "place": "Argos",
+                "id": "491527",
+                "person": "Andromeda",
+                "citations": [
+                    " Apollodorus, Library  book2.chapter4.section4."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.460186899999997,
+                    37.075742175
+                ]
+            },
+            "id": "Danae-Lacedaemon",
+            "properties": {
+                "place": "Lacedaemon",
+                "id": "570406",
+                "person": "Danae",
+                "citations": [
+                    " Apollodorus, Library  book2.chapter2.section2."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    21.885071,
+                    41.581351
+                ]
+            },
+            "id": "Danae-Argos",
+            "properties": {
+                "place": "Argos",
+                "id": "491527",
+                "person": "Danae",
+                "citations": [
+                    " Apollodorus, Library  book2.chapter4.section4.",
+                    " Lucian, Dialogi deorum book24.section2."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    21.885071,
+                    41.581351
+                ]
+            },
+            "id": "Euadne-Argos",
+            "properties": {
+                "place": "Argos",
+                "id": "491527",
+                "person": "Euadne",
+                "citations": [
+                    " Apollodorus, Library  book2.chapter1.section2."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    21.885071,
+                    41.581351
+                ]
+            },
+            "id": "Meleager-Argos",
+            "properties": {
+                "place": "Argos",
+                "id": "491527",
+                "person": "Meleager",
+                "citations": [
+                    " Apollodorus, Library  book1.chapter9.section16."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    21.885071,
+                    41.581351
+                ]
+            },
+            "id": "Achilles-Argos",
+            "properties": {
+                "place": "Argos",
+                "id": "491527",
+                "person": "Achilles",
+                "citations": [
+                    " Apollodorus, Epitome  chapter3.section20."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.88154529176389,
+                    37.90639977908864
+                ]
+            },
+            "id": "Arion-Corinth",
+            "properties": {
+                "place": "Corinth",
+                "id": "570182",
+                "person": "Arion",
+                "citations": [
+                    " Herodotus, The Histories book1.chapter23.section1.",
+                    " Herodotus, The Histories book1.chapter24.section1.",
+                    " Herodotus, The Histories book1.chapter24.section8.",
+                    " Dio Chrysostom, Orationes speech20.section3."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    17.2330416,
+                    40.4737866
+                ]
+            },
+            "id": "Arion-Tarentum",
+            "properties": {
+                "place": "Tarentum",
+                "id": "442810",
+                "person": "Arion",
+                "citations": [
+                    " Herodotus, The Histories book1.chapter24.section7."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    21.885071,
+                    41.581351
+                ]
+            },
+            "id": "Europa-Argos",
+            "properties": {
+                "place": "Argos",
+                "id": "491527",
+                "person": "Europa",
+                "citations": [
+                    " Herodotus, The Histories book7.chapter148.section1."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    26.250159394099608,
+                    39.16901707159906
+                ]
+            },
+            "id": "Arion-Lesbos",
+            "properties": {
+                "place": "Lesbos",
+                "id": "550696",
+                "person": "Arion",
+                "citations": [
+                    " Aristides, Aelius, Orationes 45  ."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.170246015828386,
+                    37.61817012463577
+                ]
+            },
+            "id": "Cecrops-Arcadia",
+            "properties": {
+                "place": "Arcadia",
+                "id": "570102",
+                "person": "Cecrops",
+                "citations": [
+                    " Aristides, Aelius, Orationes 45  ."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.170246015828386,
+                    37.61817012463577
+                ]
+            },
+            "id": "Deucalion-Arcadia",
+            "properties": {
+                "place": "Arcadia",
+                "id": "570102",
+                "person": "Deucalion",
+                "citations": [
+                    " Aristides, Aelius, Orationes 45  ."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.170246015828386,
+                    37.61817012463577
+                ]
+            },
+            "id": "Europa-Arcadia",
+            "properties": {
+                "place": "Arcadia",
+                "id": "570102",
+                "person": "Europa",
+                "citations": [
+                    " Procopius, de Bellis book3.chapter2.section7."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    39.228819,
+                    38.52585
+                ]
+            },
+            "id": "Giants-Colchis",
+            "properties": {
+                "place": "Colchis",
+                "id": "874432",
+                "person": "Giants",
+                "citations": [
+                    " , Greek Anthology, Volume I book4.chapter3.l67"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    21.885071,
+                    41.581351
+                ]
+            },
+            "id": "Cadmus-Argos",
+            "properties": {
+                "place": "Argos",
+                "id": "491527",
+                "person": "Cadmus",
+                "citations": [
+                    " Isocrates, Helen section68.",
+                    " Lucian, Dialogi deorum book24.section2.",
+                    " Euripides, Suppliants .l930"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    21.885071,
+                    41.581351
+                ]
+            },
+            "id": "Pelops-Argos",
+            "properties": {
+                "place": "Argos",
+                "id": "491527",
+                "person": "Pelops",
+                "citations": [
+                    " Isocrates, Helen section68.",
+                    " Strabo, Geography book8.chapter5.section5.",
+                    " Strabo, Geography (Greek). Machine readable text chapter5.section5."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.188078743333328,
+                    38.34519476333334
+                ]
+            },
+            "id": "Europa-Boeotia",
+            "properties": {
+                "place": "Boeotia",
+                "id": "540689",
+                "person": "Europa",
+                "citations": [
+                    " Dio Chrysostom, Orationes speech12.section49."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.88154529176389,
+                    37.90639977908864
+                ]
+            },
+            "id": "Actaeon-Corinth",
+            "properties": {
+                "place": "Corinth",
+                "id": "570182",
+                "person": "Actaeon",
+                "citations": [
+                    " Plutarch, Amatoriae narrationes chapter2."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.188078743333328,
+                    38.34519476333334
+                ]
+            },
+            "id": "Meleager-Boeotia",
+            "properties": {
+                "place": "Boeotia",
+                "id": "540689",
+                "person": "Meleager",
+                "citations": [
+                    " Plutarch, Amatorius section17."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.460186899999997,
+                    37.075742175
+                ]
+            },
+            "id": "Meleager-Lacedaemon",
+            "properties": {
+                "place": "Lacedaemon",
+                "id": "570406",
+                "person": "Meleager",
+                "citations": [
+                    " Plutarch, Amatorius section17."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.170246015828386,
+                    37.61817012463577
+                ]
+            },
+            "id": "Endymion-Arcadia",
+            "properties": {
+                "place": "Arcadia",
+                "id": "570102",
+                "person": "Endymion",
+                "citations": [
+                    " Plutarch, Numa chapter4.section2."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    21.885071,
+                    41.581351
+                ]
+            },
+            "id": "Asclepius-Argos",
+            "properties": {
+                "place": "Argos",
+                "id": "491527",
+                "person": "Asclepius",
+                "citations": [
+                    " Plutarch, Machine readable text chapter24.section5."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.48650368203568,
+                    36.401358569665966
+                ]
+            },
+            "id": "Asclepius-Tainaron",
+            "properties": {
+                "place": "Tainaron",
+                "id": "570702",
+                "person": "Asclepius",
+                "citations": [
+                    " Plutarch, Machine readable text chapter24.section5."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.1273485,
+                    37.412417500000004
+                ]
+            },
+            "id": "Achilles-Megalopolis",
+            "properties": {
+                "place": "Megalopolis",
+                "id": "570467",
+                "person": "Achilles",
+                "citations": [
+                    " Plutarch, Machine readable text chapter1.section2."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.962079770375375,
+                    37.62145180121853
+                ]
+            },
+            "id": "Andromeda-Argolis",
+            "properties": {
+                "place": "Argolis",
+                "id": "570104",
+                "person": "Andromeda",
+                "citations": [
+                    " Lucian, De Domo section22."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.460186899999997,
+                    37.075742175
+                ]
+            },
+            "id": "Narcissus-Lacedaemon",
+            "properties": {
+                "place": "Lacedaemon",
+                "id": "570406",
+                "person": "Narcissus",
+                "citations": [
+                    " Lucian, Verae Historiae book2.section17."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.188078743333328,
+                    38.34519476333334
+                ]
+            },
+            "id": "Danae-Boeotia",
+            "properties": {
+                "place": "Boeotia",
+                "id": "540689",
+                "person": "Danae",
+                "citations": [
+                    " Lucian, Dialogi deorum book24.section2."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.265891,
+                    37.549491
+                ]
+            },
+            "id": "Atalanta-Mainalos",
+            "properties": {
+                "place": "Mainalos",
+                "id": "570451",
+                "person": "Atalanta",
+                "citations": [
+                    " Apollonius Rhodius, Argonautica book1.l769"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.317577,
+                    38.319156
+                ]
+            },
+            "id": "Europa-Thebes",
+            "properties": {
+                "place": "Thebes",
+                "id": "541138",
+                "person": "Europa",
+                "citations": [
+                    " Apollonius Rhodius, Argonautica book3.l1179"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.317577,
+                    38.319156
+                ]
+            },
+            "id": "Pelops-Thebes",
+            "properties": {
+                "place": "Thebes",
+                "id": "541138",
+                "person": "Pelops",
+                "citations": [
+                    " Athenaeus, Deipnosophistae book13.chapter79."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.460186899999997,
+                    37.075742175
+                ]
+            },
+            "id": "Pelops-Lacedaemon",
+            "properties": {
+                "place": "Lacedaemon",
+                "id": "570406",
+                "person": "Pelops",
+                "citations": [
+                    " Athenaeus, Deipnosophistae book14.chapter21."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.188078743333328,
+                    38.34519476333334
+                ]
+            },
+            "id": "Cecrops-Boeotia",
+            "properties": {
+                "place": "Boeotia",
+                "id": "540689",
+                "person": "Cecrops",
+                "citations": [
+                    " Strabo, Geography book9.chapter1.section20.",
+                    " Strabo, Geography book9.chapter2.section18.",
+                    " Strabo, Geography (Greek). Machine readable text Book9.chapter1.section20.",
+                    " Strabo, Geography (Greek). Machine readable text Book9.chapter2.section18."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.48650368203568,
+                    36.401358569665966
+                ]
+            },
+            "id": "Pelops-Tainaron",
+            "properties": {
+                "place": "Tainaron",
+                "id": "570702",
+                "person": "Pelops",
+                "citations": [
+                    " Aelian, De Natura Animalium book12.chapter45."
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    26.250159394099608,
+                    39.16901707159906
+                ]
+            },
+            "id": "Amymone-Lesbos",
+            "properties": {
+                "place": "Lesbos",
+                "id": "550696",
+                "person": "Amymone",
+                "citations": [
+                    " Nonnus of Panopolis, Dionysiaca book42.l464"
+                ]
+            }
+        }
+    ]
+}
